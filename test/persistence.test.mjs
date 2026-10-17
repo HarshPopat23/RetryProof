@@ -9,7 +9,7 @@ import { LabProvider } from '../dist/providers/lab.js';
 
 test('SQLite startup waits for a competing lock before switching journal mode', async t => {
   const dir = mkdtempSync(join(tmpdir(), 'retryproof-lock-')), path = join(dir, 'domain.sqlite');
-  const code = `import { DatabaseSync } from 'node:sqlite';
+  const code = `import { DatabaseSync } from ${JSON.stringify(new URL('../dist/core/db.js', import.meta.url).href)};
     const db = new DatabaseSync(process.argv[1]);
     db.exec('CREATE TABLE lock_owner(x); BEGIN EXCLUSIVE');
     console.log('locked');

@@ -1,5 +1,11 @@
 # Bug review and final verification
 
+## Managed cloud startup correction
+
+The v4 export proves build/upload success and use of a managed Standard Node.js image, but omits the runtime exception. Review found a definite Node 20 failure: the former JSON fallback did not create its database before `chmod`. Ignored write failures and missing SQL locking also invalidated the recovery assumptions.
+
+The fallback now uses real SQLite through `better-sqlite3`, retaining native `node:sqlite` on Node 24. Regressions require immediate file creation, SQLite headers, uniqueness constraints, rejected invalid SQL, read-only access, rollback and preservation of invalid legacy data. Production startup has a health/root/authenticated-workflow smoke test, redacted diagnostics and no shared default bearer. See [Managed deployment](NITROCLOUD_DEPLOY.md).
+
 ## Connected UI update
 
 The uploaded UI's browser-array simulation and automatic fallback were removed. The new `/api` routes forward to real MCP calls, and connection failures remain visible. The backend holds credentials per connected browser session, rejects cross-origin/CSRF requests, restricts remote origins and exports a real token-protected MCP bridge without returning its bearer token.

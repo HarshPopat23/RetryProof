@@ -1,0 +1,36 @@
+{
+  "scope": "Local reproduction and verification of managed-container startup fixes; no NitroCloud redeployment performed",
+  "supplied_log": {
+    "build_succeeded": true,
+    "image_upload_succeeded": true,
+    "user_dockerfile_ignored": true,
+    "selected_template": "Standard Node.js",
+    "runtime_exception_in_export": false
+  },
+  "node24": {
+    "version": "v24.19.0",
+    "sqlite_driver": "node:sqlite",
+    "tests_passed": 80,
+    "tests_failed": 0,
+    "build_and_demo_passed": true,
+    "raw_report": "verification.json",
+    "raw_tests": "test-results.tap"
+  },
+  "node20": {
+    "version": "v20.20.2",
+    "sqlite_driver": "better-sqlite3@12.8.0",
+    "tests_passed": 80,
+    "tests_failed": 0,
+    "build_and_demo_passed": true,
+    "raw_report": "node20-verification.json",
+    "raw_tests": "node20-test-results.tap",
+    "after_prune_omit_dev": {
+      "startup_tests_passed": 3,
+      "startup_tests_failed": 0,
+      "production_health_root_and_authenticated_workflow": true
+    }
+  },
+  "cross_runtime_source_and_lock_hashes_match": true,
+  "production_dependency_audit_advisories": 0,
+  "not_performed": ["Docker image build", "Alpine execution", "NitroCloud runtime restart", "NitroCloud redeployment"]
+}

@@ -2,7 +2,7 @@
 
 ## 1. Local sandbox
 
-Use Node.js **24+** and npm. Built-in SQLite avoids a native addon install. The package lock pins the exact dependencies used in the included evidence.
+Prefer Node.js **24+** and npm. Node 24 uses built-in SQLite; Node 20.19+ can use pinned `better-sqlite3`. Use normal `npm ci` so its native binary is installed. The lockfile pins exact dependencies.
 
 ```bash
 npm ci
@@ -76,6 +76,8 @@ The container defaults to the sandbox, exposes authenticated HTTP, and uses a na
 ## 6. NitroCloud checklist
 
 The event guide calls for NitroCloud deployment [S00](SOURCES.md#s00). This archive does not contain a deployed URL or pretend a deployment has been completed.
+
+Follow [Managed NitroCloud deployment](NITROCLOUD_DEPLOY.md) for the startup fix, required settings and diagnosis of the v4 log. That log shows NitroCloud ignoring user Dockerfiles, so Dockerfile settings alone do not configure the managed runtime.
 
 Before uploading or connecting the repository, confirm that the chosen runtime supports Node 24+, STDIO child processes and durable local storage. Set `RP_TRANSPORT=http`, `RP_HOST=0.0.0.0`, a private `RP_AUTH_TOKEN`, and a genuinely persistent `RP_DATA_DIR`. Use `npm ci && npm run build` for build and `npm start` to run. `PORT` takes precedence over `RP_PORT` for platform-assigned ports.
 

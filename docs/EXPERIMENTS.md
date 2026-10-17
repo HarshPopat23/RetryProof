@@ -9,7 +9,7 @@ The earlier participant run reported 10 PASS results. Its raw receipts are retai
 Use Node.js 24+ in the repository root:
 
 ```bash
-npm ci --ignore-scripts
+npm ci
 npm run verify
 npm run experiments:local
 ```

@@ -8,7 +8,9 @@ A GitHub issue can be created successfully even when its MCP response never reac
 
 ## Start here
 
-Requires **Node.js 24+**, npm, and no API keys for the sandbox.
+Prefer **Node.js 24+** and npm. Node 20.19+ is supported through the real SQLite compatibility driver. No API keys are needed for the local sandbox.
+
+Deploying to NitroCloud? Read the [managed deployment guide](docs/NITROCLOUD_DEPLOY.md). Its managed image may ignore this repository's Dockerfile. The Node 20 compatibility path now uses real SQLite; run ordinary `npm ci` and configure a private `RP_AUTH_TOKEN`.
 
 For the connected browser dashboard:
 

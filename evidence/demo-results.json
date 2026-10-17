@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T08:36:52.899Z",
+  "generated_at": "2026-10-17T09:54:18.948Z",
   "node": "v24.19.0",
   "evidence_type": "Executed sandbox MCP interactions; no real GitHub writes and no LLM inference",
   "scenarios": [
@@ -165,21 +165,21 @@
             "operationKey": "protected:issue",
             "state": "prepared",
             "reason": "Intent persisted before dispatch",
-            "at": "2026-10-17T08:36:54.444Z"
+            "at": "2026-10-17T09:54:20.447Z"
           },
           {
             "seq": 2,
             "operationKey": "protected:issue",
             "state": "in_flight",
             "reason": "Dispatch ownership committed before the external call",
-            "at": "2026-10-17T08:36:54.445Z"
+            "at": "2026-10-17T09:54:20.448Z"
           },
           {
             "seq": 3,
             "operationKey": "protected:issue",
             "state": "unknown",
             "reason": "Write response unavailable or untrusted; verify before taking any further action",
-            "at": "2026-10-17T08:36:54.947Z"
+            "at": "2026-10-17T09:54:20.950Z"
           }
         ],
         "event_count": 3,
@@ -205,15 +205,15 @@
             "state": "verified",
             "evidence": {
               "effect": {
-                "id": "8c0d1474-e2dc-4f3e-a680-fda1e6f61bc2",
+                "id": "d2756637-8069-41cd-8884-9cdc124c1371",
                 "marker": "rp_6a245e4493ca4a3353e77f41797b1dbba9bc727b43426e4e92d3c241d13d01dc",
                 "target": "sandbox:issues",
                 "title": "Maintainer: preserve this correction",
                 "body": "Reproduction: parse an empty configuration.",
                 "sourceId": "",
-                "url": "https://sandbox.retryproof.invalid/records/8c0d1474-e2dc-4f3e-a680-fda1e6f61bc2"
+                "url": "https://sandbox.retryproof.invalid/records/d2756637-8069-41cd-8884-9cdc124c1371"
               },
-              "verifiedAt": "2026-10-17T08:36:55.654Z",
+              "verifiedAt": "2026-10-17T09:54:21.610Z",
               "method": "reconciled_read"
             },
             "attempts": 1,
@@ -227,23 +227,23 @@
             "target": "local:release-board",
             "payload": {
               "title": "Fix parser crash",
-              "body": "https://sandbox.retryproof.invalid/records/8c0d1474-e2dc-4f3e-a680-fda1e6f61bc2",
-              "sourceId": "8c0d1474-e2dc-4f3e-a680-fda1e6f61bc2"
+              "body": "https://sandbox.retryproof.invalid/records/d2756637-8069-41cd-8884-9cdc124c1371",
+              "sourceId": "d2756637-8069-41cd-8884-9cdc124c1371"
             },
-            "fingerprint": "746eb37c96ab362131a3e50ab44a963c4ad6db4bdc94c45c37f6f51caddb2d3d",
-            "marker": "rp_1f36a94a97c64b629c173837f9c20eba865adab6feceac42e447676db0c91f69",
+            "fingerprint": "c9e14d7675302a6ea63a17be193472be6b786d9902ca8675b9868bd8afaec48f",
+            "marker": "rp_00f2c66d077cb10dcee203fba077254a548c182c160e9ce5b6a81209353ccad6",
             "state": "verified",
             "evidence": {
               "effect": {
-                "id": "de3b50a7-f50a-4e95-bb15-a039bac603f1",
-                "marker": "rp_1f36a94a97c64b629c173837f9c20eba865adab6feceac42e447676db0c91f69",
+                "id": "ee3c115a-76d9-41b6-a668-13573ba4e9b3",
+                "marker": "rp_00f2c66d077cb10dcee203fba077254a548c182c160e9ce5b6a81209353ccad6",
                 "target": "local:release-board",
                 "title": "Fix parser crash",
-                "body": "https://sandbox.retryproof.invalid/records/8c0d1474-e2dc-4f3e-a680-fda1e6f61bc2",
-                "sourceId": "8c0d1474-e2dc-4f3e-a680-fda1e6f61bc2",
-                "url": "https://sandbox.retryproof.invalid/records/de3b50a7-f50a-4e95-bb15-a039bac603f1"
+                "body": "https://sandbox.retryproof.invalid/records/d2756637-8069-41cd-8884-9cdc124c1371",
+                "sourceId": "d2756637-8069-41cd-8884-9cdc124c1371",
+                "url": "https://sandbox.retryproof.invalid/records/ee3c115a-76d9-41b6-a668-13573ba4e9b3"
               },
-              "verifiedAt": "2026-10-17T08:36:55.990Z",
+              "verifiedAt": "2026-10-17T09:54:21.927Z",
               "method": "read_after_write"
             },
             "attempts": 1,
@@ -257,49 +257,49 @@
             "operationKey": "protected:issue",
             "state": "prepared",
             "reason": "Intent persisted before dispatch",
-            "at": "2026-10-17T08:36:54.444Z"
+            "at": "2026-10-17T09:54:20.447Z"
           },
           {
             "seq": 2,
             "operationKey": "protected:issue",
             "state": "in_flight",
             "reason": "Dispatch ownership committed before the external call",
-            "at": "2026-10-17T08:36:54.445Z"
+            "at": "2026-10-17T09:54:20.448Z"
           },
           {
             "seq": 3,
             "operationKey": "protected:issue",
             "state": "unknown",
             "reason": "Write response unavailable or untrusted; verify before taking any further action",
-            "at": "2026-10-17T08:36:54.947Z"
+            "at": "2026-10-17T09:54:20.950Z"
           },
           {
             "seq": 4,
             "operationKey": "protected:issue",
             "state": "verified",
             "reason": "External record read and identity verified",
-            "at": "2026-10-17T08:36:55.654Z"
+            "at": "2026-10-17T09:54:21.610Z"
           },
           {
             "seq": 5,
             "operationKey": "protected:tracking",
             "state": "prepared",
             "reason": "Intent persisted before dispatch",
-            "at": "2026-10-17T08:36:55.656Z"
+            "at": "2026-10-17T09:54:21.612Z"
           },
           {
             "seq": 6,
             "operationKey": "protected:tracking",
             "state": "in_flight",
             "reason": "Dispatch ownership committed before the external call",
-            "at": "2026-10-17T08:36:55.983Z"
+            "at": "2026-10-17T09:54:21.920Z"
           },
           {
             "seq": 7,
             "operationKey": "protected:tracking",
             "state": "verified",
             "reason": "External record read and identity verified",
-            "at": "2026-10-17T08:36:55.990Z"
+            "at": "2026-10-17T09:54:21.927Z"
           }
         ],
         "event_count": 7,
@@ -341,21 +341,21 @@
             "operationKey": "unknown:issue",
             "state": "prepared",
             "reason": "Intent persisted before dispatch",
-            "at": "2026-10-17T08:36:56.292Z"
+            "at": "2026-10-17T09:54:22.250Z"
           },
           {
             "seq": 9,
             "operationKey": "unknown:issue",
             "state": "in_flight",
             "reason": "Dispatch ownership committed before the external call",
-            "at": "2026-10-17T08:36:56.292Z"
+            "at": "2026-10-17T09:54:22.251Z"
           },
           {
             "seq": 10,
             "operationKey": "unknown:issue",
             "state": "unknown",
             "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
-            "at": "2026-10-17T08:36:56.296Z"
+            "at": "2026-10-17T09:54:22.254Z"
           }
         ],
         "event_count": 3,

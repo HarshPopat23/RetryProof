@@ -1,17 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, rmSync } from 'node:fs';
+import { mkdtempSync, rmSync, existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { FallbackDatabaseSync } from '../dist/core/db.js';
-import { Store } from '../dist/core/store.js';
 
-test('FallbackDatabaseSync provides full SQL compatibility and persistence', t => {
+test('Node 20 compatibility driver uses real SQLite queries, rollback and persistence', t => {
   const dir = mkdtempSync(join(tmpdir(), 'retryproof-fallback-'));
   const path = join(dir, 'test.sqlite');
   t.after(() => rmSync(dir, { recursive: true, force: true }));
 
   const db = new FallbackDatabaseSync(path);
+  assert.equal(existsSync(path), true, 'Database file must exist before Store calls chmod');
   db.exec(`
     PRAGMA busy_timeout=5000;
     CREATE TABLE IF NOT EXISTS runs (workspace TEXT, id TEXT, fingerprint TEXT, data TEXT, PRIMARY KEY(workspace,id));
@@ -23,6 +23,8 @@ test('FallbackDatabaseSync provides full SQL compatibility and persistence', t =
   const run1 = { workspace: 'ws1', id: 'run1', fingerprint: 'fp1', data: JSON.stringify({ id: 'run1' }) };
   const insRun = db.prepare('INSERT INTO runs VALUES(?,?,?,?)').run(run1.workspace, run1.id, run1.fingerprint, run1.data);
   assert.equal(insRun.changes, 1);
+  assert.throws(() => db.prepare('INSERT INTO runs VALUES(?,?,?,?)').run(run1.workspace, run1.id, 'changed', '{}'), /UNIQUE/);
+  assert.throws(() => db.prepare('THIS IS NOT SQL'), /syntax error/);
 
   // Select Run
   const selRun = db.prepare('SELECT fingerprint,data FROM runs WHERE workspace=? AND id=?').get('ws1', 'run1');
@@ -74,10 +76,24 @@ test('FallbackDatabaseSync provides full SQL compatibility and persistence', t =
   assert.equal(db.prepare('SELECT data FROM runs WHERE workspace=? AND id=?').get('ws1', 'run2'), undefined);
 
   db.close();
+  assert.equal(readFileSync(path).subarray(0, 16).toString(), 'SQLite format 3\u0000');
 
   // Test reload from disk in a fresh instance
   const db2 = new FallbackDatabaseSync(path);
   const reloadedRun = db2.prepare('SELECT fingerprint,data FROM runs WHERE workspace=? AND id=?').get('ws1', 'run1');
   assert.equal(reloadedRun.fingerprint, 'fp1');
   db2.close();
+});
+
+test('compatibility driver enforces read-only access and preserves invalid legacy JSON', t => {
+  const dir = mkdtempSync(join(tmpdir(), 'retryproof-real-sqlite-'));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const path = join(dir, 'valid.sqlite'), missing = join(dir, 'missing.sqlite');
+  const db = new FallbackDatabaseSync(path); db.exec('CREATE TABLE records(id INTEGER PRIMARY KEY); INSERT INTO records VALUES(1)'); db.close();
+  const readOnly = new FallbackDatabaseSync(path, { readOnly: true });
+  assert.throws(() => readOnly.exec('INSERT INTO records VALUES(2)'), /readonly/); readOnly.close();
+  assert.throws(() => new FallbackDatabaseSync(missing, { readOnly: true })); assert.equal(existsSync(missing), false);
+  const legacy = join(dir, 'legacy.sqlite'), original = '{"tables":[],"seq":0}'; writeFileSync(legacy, original);
+  assert.throws(() => { const invalid = new FallbackDatabaseSync(legacy); try { invalid.exec('CREATE TABLE x(id)'); } finally { invalid.close(); } });
+  assert.equal(readFileSync(legacy, 'utf8'), original, 'Never replace a non-SQLite ledger with empty state');
 });

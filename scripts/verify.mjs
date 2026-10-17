@@ -30,7 +30,7 @@ const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 run('strict TypeScript build', npm, ['run', 'build']);
 if (checks.every(c => c.passed)) {
   const tests = run('automated core, adapter and real MCP transport tests', process.execPath,
-    ['--test', '--test-concurrency=1', '--test-reporter=tap', 'test/assets.test.mjs', 'test/core.test.mjs', 'test/github.test.mjs', 'test/http.test.mjs', 'test/mcp.test.mjs', 'test/persistence.test.mjs', 'test/dashboard.test.mjs', 'test/experiment-evidence.test.mjs']);
+    ['--test', '--test-concurrency=1', '--test-reporter=tap', ...readdirSync(`${root}/test`).filter(name => name.endsWith('.test.mjs')).sort().map(name => `test/${name}`)]);
   mkdirSync(`${root}/evidence`, { recursive: true }); writeFileSync(`${root}/evidence/test-results.tap`, tests.output);
   run('executed baseline and protected recovery demo', process.execPath, ['scripts/demo.mjs']);
 }

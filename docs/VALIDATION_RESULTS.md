@@ -1,5 +1,11 @@
 # Validation history and current evidence
 
+## Managed deployment startup fix
+
+The current startup/storage correction passes **80 tests on Node 24.19.0 and 80 on Node 20.20.2**, with strict builds and comparison demos on both. Source and lock hashes match across the two runs. After `npm prune --omit=dev`, all three Node 20 production-startup checks also pass, including health/root responses and an authenticated issue/tracking workflow.
+
+The production dependency audit reports zero advisories at check time. See `evidence/deployment-startup-validation.json`, `evidence/verification.json`, `evidence/node20-verification.json` and their TAP logs. This checks Linux runtimes locally; no Docker image, Alpine execution or NitroCloud redeployment/restart is claimed. The supplied failed-deployment export contains no container runtime exception. Follow [Managed deployment](NITROCLOUD_DEPLOY.md) for required secrets and live verification.
+
 ## Evidence review verification (2026-10-17)
 
 The evidence-review changes were checked separately from the original delivery measurements below:

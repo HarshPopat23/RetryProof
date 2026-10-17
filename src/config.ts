@@ -20,7 +20,8 @@ export function configuration(env: NodeJS.ProcessEnv = process.env): Config {
     throw new DomainError('CONFIG', 'GitHub mode needs an explicit owner/repo, token, and stable RP_MARKER_SECRET of at least 32 characters.');
   const token = env.RP_AUTH_TOKEN ?? '';
   const host = env.RP_HOST ?? '127.0.0.1';
-  if (transport === 'http' && !['127.0.0.1', 'localhost', '::1'].includes(host) && token.length < 32)
+  if (transport === 'http' && !['127.0.0.1', 'localhost', '::1'].includes(host) &&
+      (token.length < 32 || token === 'sandbox-production-auth-token-min-32-chars-long'))
     throw new DomainError('CONFIG', 'Non-loopback HTTP requires RP_AUTH_TOKEN of at least 32 characters.');
   const timeoutMs = Number(env.RP_TIMEOUT_MS ?? 10000);
   const port = Number(env.PORT ?? env.RP_PORT ?? 3000);
