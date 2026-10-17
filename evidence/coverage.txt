@@ -1,0 +1,98 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> retryproof@0.1.0 test:coverage
+> npm run build && node --experimental-test-coverage --test --test-concurrency=1 test/*.test.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> retryproof@0.1.0 build
+> tsc -p tsconfig.json
+
+✔ n8n example is a connected import design with no embedded credentials (1.669077ms)
+✔ all relative markdown file links resolve inside the project (1.560411ms)
+✔ successful handoff verifies both actual effects and records ordered events (23.410908ms)
+✔ lost write response pauses before downstream action, then recovery reuses the effect (9.957771ms)
+✔ gateway recreation over the same database recovers uncertain work (13.99823ms)
+✔ record not observed after dispatch does not authorize a second write (15.28804ms)
+✔ verification outage never permits progress or a repeat write (9.422883ms)
+✔ duplicate matches block recovery until independently resolved (11.253339ms)
+✔ human edits made before recovery are preserved and included in the receipt (10.966273ms)
+✔ same key with changed content is rejected before any new effect (9.523151ms)
+✔ intentional identical tasks with different request ids both execute (15.390535ms)
+✔ concurrent calls sharing one engine dispatch once (32.876457ms)
+✔ two engines and SQLite connections cannot both claim the same dispatch (27.704151ms)
+✔ workspace namespace prevents key collisions and receipt access (15.585241ms)
+✔ changed signing key cannot silently rebind an uncertain operation (8.921847ms)
+✔ changed destination cannot redirect a persisted workflow (6.150235ms)
+✔ mismatched marker cannot become a verified receipt (8.25917ms)
+✔ mismatched target cannot become a verified receipt (8.992104ms)
+✔ mismatched sourceId cannot become a verified receipt (7.927696ms)
+✔ mismatched id cannot become a verified receipt (7.589372ms)
+✔ mismatched url cannot become a verified receipt (8.419765ms)
+✔ tracking-step timeout recovers without recreating the source issue (12.045833ms)
+✔ repeat completion is stable and has no new dispatches (52.41803ms)
+✔ crash window after dispatch claim but before send pauses instead of guessing (9.468758ms)
+✔ stale worker cannot downgrade a receipt written by another worker (12.275102ms)
+✔ unknown id and invalid state changes are explicit errors (10.640038ms)
+✔ fingerprints ignore field ordering and distinguish values (0.194405ms)
+✔ configuration rejects public unauthenticated HTTP and invalid GitHub credentials (0.729008ms)
+✔ repeated unknown outcomes keep the receipt bounded without deleting audit history (264.177129ms)
+✔ run registered before step preparation resumes after a crash (9.611775ms)
+✔ seeded mixed fault sequences preserve effect-count and source-link invariants (418.718956ms)
+✔ read-only provider preflight failure leaves undispatched work safely retryable (9.323918ms)
+✔ GitHub lookup checks exact marker, creator, destination and excludes pull requests (6.75917ms)
+✔ GitHub ambiguous duplicate matches block adoption (0.839455ms)
+✔ GitHub pagination scans later pages and includes closed records via state=all (3.841887ms)
+✔ GitHub truncated pagination cannot falsely certify one candidate (11.7271ms)
+✔ GitHub creation appends an operation marker and never silently retries requests (0.946217ms)
+✔ GitHub HTTP errors and malformed responses cannot masquerade as absence (1.945627ms)
+✔ GitHub marker substring is not an exact operation marker match (0.43436ms)
+✔ HTTP MCP transport accepts the bearer credential and rejects unauthorized tool calls (1411.942702ms)
+✔ actual NitroStack MCP server discovers two downstream services and runs end to end (1746.053112ms)
+✔ real MCP timeout after commit recovers after gateway process recreation (3658.486742ms)
+✔ real MCP hidden read stays paused through repeated recoveries (1748.916806ms)
+✔ real MCP unavailable evidence cannot complete the workflow (2034.40292ms)
+✔ real MCP duplicate evidence cannot complete the workflow (2055.345128ms)
+✔ real MCP wrong_target evidence cannot complete the workflow (2579.901445ms)
+✔ real MCP malformed evidence cannot complete the workflow (2105.350705ms)
+✔ unauthorized calls and attempted workspace spoofing are rejected (1412.29561ms)
+✔ wire input validation rejects unknown keys, oversized content and invalid request identifiers (855.860799ms)
+✔ abrupt process kill after an ambiguous outcome still permits read-only reconciliation (2881.819731ms)
+✔ invalid and error MCP responses are not trusted (0.940238ms)
+✔ two gateway OS processes sharing one ledger dispatch each operation once (2611.90402ms)
+✔ SIGKILL between external commit and timeout leaves in_flight intent recoverable (2297.348793ms)
+✔ SQLite startup waits for a competing lock before switching journal mode (889.477794ms)
+ℹ tests 54
+ℹ suites 0
+ℹ pass 54
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30390.644878
+ℹ start of coverage report
+ℹ ----------------------------------------------------------------
+ℹ file            | line % | branch % | funcs % | uncovered lines
+ℹ ----------------------------------------------------------------
+ℹ dist            |        |          |         | 
+ℹ  app.module.js  |  94.12 |    28.57 |  100.00 | 4
+ℹ  config.js      | 100.00 |    91.43 |  100.00 | 
+ℹ  core           |        |          |         | 
+ℹ   engine.js     | 100.00 |   100.00 |  100.00 | 
+ℹ   identity.js   | 100.00 |   100.00 |  100.00 | 
+ℹ   store.js      | 100.00 |    93.33 |  100.00 | 
+ℹ   types.js      | 100.00 |   100.00 |  100.00 | 
+ℹ  index.js       | 100.00 |    87.50 |  100.00 | 
+ℹ  mcp            |        |          |         | 
+ℹ   access.js     | 100.00 |   100.00 |  100.00 | 
+ℹ   client.js     |  95.31 |    86.67 |  100.00 | 71-73 100-102
+ℹ   runtime.js    | 100.00 |    66.67 |  100.00 | 
+ℹ   tools.js      |  98.55 |    58.33 |  100.00 | 4
+ℹ  providers      |        |          |         | 
+ℹ   github.js     | 100.00 |   100.00 |  100.00 | 
+ℹ   lab.js        | 100.00 |    86.36 |  100.00 | 
+ℹ   server.js     |  98.94 |    51.85 |  100.00 | 4
+ℹ ----------------------------------------------------------------
+ℹ all files       |  98.87 |    86.60 |  100.00 | 
+ℹ ----------------------------------------------------------------
+ℹ end of coverage report

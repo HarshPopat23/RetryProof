@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "retryproof": {
+      "command": "node",
+      "args": ["/ABSOLUTE/PATH/TO/retryproof/dist/index.js"],
+      "env": {
+        "RP_MODE": "sandbox",
+        "RP_DATA_DIR": "/ABSOLUTE/PRIVATE/PATH/retryproof-data"
+      }
+    }
+  }
+}

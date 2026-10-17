@@ -1,0 +1,367 @@
+{
+  "generated_at": "2026-10-17T05:41:20.705Z",
+  "node": "v24.19.0",
+  "evidence_type": "Executed sandbox MCP interactions; no real GitHub writes and no LLM inference",
+  "scenarios": [
+    {
+      "name": "baseline_blind_retry",
+      "response_lost": true,
+      "issue_records": 2,
+      "verdict": "duplicate_reproduced"
+    },
+    {
+      "name": "verified_recovery_after_restart",
+      "issue_records_for_this_task": 1,
+      "tracking_records": 1,
+      "human_edit_preserved": true,
+      "replay_no_new_writes": true,
+      "capabilities": {
+        "mode": "sandbox",
+        "issueTarget": "sandbox:issues",
+        "trackerTarget": "local:release-board",
+        "services": [
+          {
+            "service": "issue",
+            "tools": [
+              {
+                "name": "issue_create",
+                "description": "Create a issue record in the configured destination. Non-idempotent; do not retry an ambiguous result.",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "marker": {
+                      "type": "string",
+                      "pattern": "^rp_[a-f0-9]{64}$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "body": {
+                      "type": "string",
+                      "maxLength": 10000
+                    },
+                    "sourceId": {
+                      "type": "string",
+                      "maxLength": 200
+                    }
+                  },
+                  "required": [
+                    "marker",
+                    "title",
+                    "body",
+                    "sourceId"
+                  ],
+                  "additionalProperties": true,
+                  "$schema": "http://json-schema.org/draft-07/schema#"
+                }
+              },
+              {
+                "name": "issue_find",
+                "description": "Read issue records by exact operation marker. Missing results do not authorize a retry.",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "marker": {
+                      "type": "string",
+                      "pattern": "^rp_[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "marker"
+                  ],
+                  "additionalProperties": true,
+                  "$schema": "http://json-schema.org/draft-07/schema#"
+                }
+              }
+            ]
+          },
+          {
+            "service": "tracking",
+            "tools": [
+              {
+                "name": "tracking_create",
+                "description": "Create a tracking record in the configured destination. Non-idempotent; do not retry an ambiguous result.",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "marker": {
+                      "type": "string",
+                      "pattern": "^rp_[a-f0-9]{64}$"
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200
+                    },
+                    "body": {
+                      "type": "string",
+                      "maxLength": 10000
+                    },
+                    "sourceId": {
+                      "type": "string",
+                      "maxLength": 200
+                    }
+                  },
+                  "required": [
+                    "marker",
+                    "title",
+                    "body",
+                    "sourceId"
+                  ],
+                  "additionalProperties": true,
+                  "$schema": "http://json-schema.org/draft-07/schema#"
+                }
+              },
+              {
+                "name": "tracking_find",
+                "description": "Read tracking records by exact operation marker. Missing results do not authorize a retry.",
+                "inputSchema": {
+                  "type": "object",
+                  "properties": {
+                    "marker": {
+                      "type": "string",
+                      "pattern": "^rp_[a-f0-9]{64}$"
+                    }
+                  },
+                  "required": [
+                    "marker"
+                  ],
+                  "additionalProperties": true,
+                  "$schema": "http://json-schema.org/draft-07/schema#"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "paused_receipt": {
+        "request_id": "protected",
+        "status": "paused",
+        "operations": [
+          {
+            "key": "protected:issue",
+            "runId": "protected",
+            "kind": "issue",
+            "target": "sandbox:issues",
+            "payload": {
+              "title": "Fix parser crash",
+              "body": "Reproduction: parse an empty configuration.",
+              "sourceId": ""
+            },
+            "fingerprint": "bcf72faa8b7afab1fe862d7ef0d66c09def410f82e809b4da6c98111ba983ec7",
+            "marker": "rp_6a245e4493ca4a3353e77f41797b1dbba9bc727b43426e4e92d3c241d13d01dc",
+            "state": "unknown",
+            "evidence": null,
+            "attempts": 1,
+            "version": 2,
+            "reason": "Write response unavailable or untrusted; verify before taking any further action"
+          }
+        ],
+        "events": [
+          {
+            "seq": 1,
+            "operationKey": "protected:issue",
+            "state": "prepared",
+            "reason": "Intent persisted before dispatch",
+            "at": "2026-10-17T05:41:22.169Z"
+          },
+          {
+            "seq": 2,
+            "operationKey": "protected:issue",
+            "state": "in_flight",
+            "reason": "Dispatch ownership committed before the external call",
+            "at": "2026-10-17T05:41:22.169Z"
+          },
+          {
+            "seq": 3,
+            "operationKey": "protected:issue",
+            "state": "unknown",
+            "reason": "Write response unavailable or untrusted; verify before taking any further action",
+            "at": "2026-10-17T05:41:22.671Z"
+          }
+        ],
+        "event_count": 3,
+        "events_truncated": false,
+        "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+      },
+      "recovered_receipt": {
+        "request_id": "protected",
+        "status": "completed",
+        "operations": [
+          {
+            "key": "protected:issue",
+            "runId": "protected",
+            "kind": "issue",
+            "target": "sandbox:issues",
+            "payload": {
+              "title": "Fix parser crash",
+              "body": "Reproduction: parse an empty configuration.",
+              "sourceId": ""
+            },
+            "fingerprint": "bcf72faa8b7afab1fe862d7ef0d66c09def410f82e809b4da6c98111ba983ec7",
+            "marker": "rp_6a245e4493ca4a3353e77f41797b1dbba9bc727b43426e4e92d3c241d13d01dc",
+            "state": "verified",
+            "evidence": {
+              "effect": {
+                "id": "67e6f13c-5349-4db2-8ae7-fe654edab9de",
+                "marker": "rp_6a245e4493ca4a3353e77f41797b1dbba9bc727b43426e4e92d3c241d13d01dc",
+                "target": "sandbox:issues",
+                "title": "Maintainer: preserve this correction",
+                "body": "Reproduction: parse an empty configuration.",
+                "sourceId": "",
+                "url": "https://sandbox.retryproof.invalid/records/67e6f13c-5349-4db2-8ae7-fe654edab9de"
+              },
+              "verifiedAt": "2026-10-17T05:41:23.310Z",
+              "method": "reconciled_read"
+            },
+            "attempts": 1,
+            "version": 3,
+            "reason": "External record read and identity verified"
+          },
+          {
+            "key": "protected:tracking",
+            "runId": "protected",
+            "kind": "tracking",
+            "target": "local:release-board",
+            "payload": {
+              "title": "Fix parser crash",
+              "body": "https://sandbox.retryproof.invalid/records/67e6f13c-5349-4db2-8ae7-fe654edab9de",
+              "sourceId": "67e6f13c-5349-4db2-8ae7-fe654edab9de"
+            },
+            "fingerprint": "4787be12c8920e3ad9ac97d74e2d2e85f948890d28a773eabd41a96b0659341a",
+            "marker": "rp_069ca6d647f677a313d7070ae3a2bec2c97e2fd0929e4e27ad78b4aebd0f332c",
+            "state": "verified",
+            "evidence": {
+              "effect": {
+                "id": "58b98639-b657-409c-904c-afe408c7506e",
+                "marker": "rp_069ca6d647f677a313d7070ae3a2bec2c97e2fd0929e4e27ad78b4aebd0f332c",
+                "target": "local:release-board",
+                "title": "Fix parser crash",
+                "body": "https://sandbox.retryproof.invalid/records/67e6f13c-5349-4db2-8ae7-fe654edab9de",
+                "sourceId": "67e6f13c-5349-4db2-8ae7-fe654edab9de",
+                "url": "https://sandbox.retryproof.invalid/records/58b98639-b657-409c-904c-afe408c7506e"
+              },
+              "verifiedAt": "2026-10-17T05:41:23.655Z",
+              "method": "read_after_write"
+            },
+            "attempts": 1,
+            "version": 2,
+            "reason": "External record read and identity verified"
+          }
+        ],
+        "events": [
+          {
+            "seq": 1,
+            "operationKey": "protected:issue",
+            "state": "prepared",
+            "reason": "Intent persisted before dispatch",
+            "at": "2026-10-17T05:41:22.169Z"
+          },
+          {
+            "seq": 2,
+            "operationKey": "protected:issue",
+            "state": "in_flight",
+            "reason": "Dispatch ownership committed before the external call",
+            "at": "2026-10-17T05:41:22.169Z"
+          },
+          {
+            "seq": 3,
+            "operationKey": "protected:issue",
+            "state": "unknown",
+            "reason": "Write response unavailable or untrusted; verify before taking any further action",
+            "at": "2026-10-17T05:41:22.671Z"
+          },
+          {
+            "seq": 4,
+            "operationKey": "protected:issue",
+            "state": "verified",
+            "reason": "External record read and identity verified",
+            "at": "2026-10-17T05:41:23.310Z"
+          },
+          {
+            "seq": 5,
+            "operationKey": "protected:tracking",
+            "state": "prepared",
+            "reason": "Intent persisted before dispatch",
+            "at": "2026-10-17T05:41:23.312Z"
+          },
+          {
+            "seq": 6,
+            "operationKey": "protected:tracking",
+            "state": "in_flight",
+            "reason": "Dispatch ownership committed before the external call",
+            "at": "2026-10-17T05:41:23.648Z"
+          },
+          {
+            "seq": 7,
+            "operationKey": "protected:tracking",
+            "state": "verified",
+            "reason": "External record read and identity verified",
+            "at": "2026-10-17T05:41:23.655Z"
+          }
+        ],
+        "event_count": 7,
+        "events_truncated": false,
+        "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+      }
+    },
+    {
+      "name": "absence_is_not_non_execution",
+      "retries": 5,
+      "repeated_writes": 0,
+      "status": "paused",
+      "receipt": {
+        "request_id": "unknown",
+        "status": "paused",
+        "operations": [
+          {
+            "key": "unknown:issue",
+            "runId": "unknown",
+            "kind": "issue",
+            "target": "sandbox:issues",
+            "payload": {
+              "title": "Read is temporarily stale",
+              "body": "",
+              "sourceId": ""
+            },
+            "fingerprint": "5a7f501a35024fe5a4647f846ed45df8decc4075c3d66b7ed254dd81c5218f88",
+            "marker": "rp_869d65bc9f3650be87b0d3a022a344ce8ce25b29342a7e17cfb4d742abf10170",
+            "state": "unknown",
+            "evidence": null,
+            "attempts": 1,
+            "version": 2,
+            "reason": "No matching record observed; absence is not proof of non-execution. No write repeated."
+          }
+        ],
+        "events": [
+          {
+            "seq": 8,
+            "operationKey": "unknown:issue",
+            "state": "prepared",
+            "reason": "Intent persisted before dispatch",
+            "at": "2026-10-17T05:41:23.973Z"
+          },
+          {
+            "seq": 9,
+            "operationKey": "unknown:issue",
+            "state": "in_flight",
+            "reason": "Dispatch ownership committed before the external call",
+            "at": "2026-10-17T05:41:23.974Z"
+          },
+          {
+            "seq": 10,
+            "operationKey": "unknown:issue",
+            "state": "unknown",
+            "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+            "at": "2026-10-17T05:41:23.978Z"
+          }
+        ],
+        "event_count": 3,
+        "events_truncated": false,
+        "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+      }
+    }
+  ]
+}

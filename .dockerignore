@@ -1,0 +1,12 @@
+node_modules
+dist
+data
+.env
+.env.*
+.git
+.agents
+.codex
+.claude
+output
+*.sqlite*
+*.log

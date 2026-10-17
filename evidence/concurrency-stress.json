@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-10-17T05:41:58.489Z",
+  "iterations": 10,
+  "passed": true,
+  "results": [
+    {
+      "iteration": 1,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2126.410739ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2332.684929\n"
+    },
+    {
+      "iteration": 2,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2039.177303ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2242.353031\n"
+    },
+    {
+      "iteration": 3,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2071.386606ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2244.610133\n"
+    },
+    {
+      "iteration": 4,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (1945.990483ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2118.697494\n"
+    },
+    {
+      "iteration": 5,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2021.241784ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2205.008932\n"
+    },
+    {
+      "iteration": 6,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2098.270376ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2276.757808\n"
+    },
+    {
+      "iteration": 7,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2264.180738ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2462.821577\n"
+    },
+    {
+      "iteration": 8,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2232.587736ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2467.03931\n"
+    },
+    {
+      "iteration": 9,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2285.395553ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2498.198504\n"
+    },
+    {
+      "iteration": 10,
+      "passed": true,
+      "output": "✔ two gateway OS processes sharing one ledger dispatch each operation once (2446.643244ms)\nℹ tests 1\nℹ suites 0\nℹ pass 1\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 2678.99178\n"
+    }
+  ]
+}

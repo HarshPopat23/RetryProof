@@ -1,0 +1,253 @@
+{
+  "name": "RetryProof - verified MCP handoff",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "endpoint",
+              "name": "endpoint",
+              "type": "string",
+              "value": "http://127.0.0.1:3000/mcp"
+            },
+            {
+              "id": "request",
+              "name": "request_id",
+              "type": "string",
+              "value": "n8n-handoff-001"
+            },
+            {
+              "id": "title",
+              "name": "title",
+              "type": "string",
+              "value": "Fix empty configuration parser"
+            },
+            {
+              "id": "body",
+              "name": "body",
+              "type": "string",
+              "value": "Reproduction: load an empty configuration file."
+            },
+            {
+              "id": "tool",
+              "name": "tool_name",
+              "type": "string",
+              "value": "rp_start_workflow"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "task",
+      "name": "Task",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        250,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Task\").item.json.endpoint }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json",
+              "fullResponse": true
+            }
+          }
+        },
+        "jsonBody": "={{ { jsonrpc: \"2.0\", id: 1, method: \"initialize\", params: { protocolVersion: \"2025-11-25\", capabilities: {}, clientInfo: { name: \"n8n-retryproof\", version: \"0.1.0\" } } } }}"
+      },
+      "id": "initialize",
+      "name": "Initialize MCP",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        500,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Task\").item.json.endpoint }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Mcp-Session-Id",
+              "value": "={{ $(\"Initialize MCP\").item.json.headers[\"mcp-session-id\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json",
+              "fullResponse": true
+            }
+          }
+        },
+        "jsonBody": "={{ { jsonrpc: \"2.0\", method: \"notifications/initialized\" } }}"
+      },
+      "id": "initialized",
+      "name": "Initialized notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        750,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $(\"Task\").item.json.endpoint }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Mcp-Session-Id",
+              "value": "={{ $(\"Initialize MCP\").item.json.headers[\"mcp-session-id\"] }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json",
+              "fullResponse": true
+            }
+          }
+        },
+        "jsonBody": "={{ { jsonrpc: \"2.0\", id: 2, method: \"tools/call\", params: { name: $(\"Task\").item.json.tool_name, arguments: $(\"Task\").item.json.tool_name === \"rp_start_workflow\" ? { request_id: $(\"Task\").item.json.request_id, title: $(\"Task\").item.json.title, body: $(\"Task\").item.json.body } : { request_id: $(\"Task\").item.json.request_id } } } }}"
+      },
+      "id": "call",
+      "name": "Call RetryProof",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        0
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const rpc = $json.body;\nif (rpc.error) throw new Error(\"MCP protocol error: \" + JSON.stringify(rpc.error));\nconst result = rpc.result;\nif (result.isError) throw new Error(\"RetryProof rejected the tool request\");\nconst parsed = result.structuredContent ?? JSON.parse(result.content.find(x => x.type === \"text\").text);\nreturn { json: { ...parsed, workflow_completed: parsed.status === \"completed\" } };"
+      },
+      "id": "interpret",
+      "name": "Interpret result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1250,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Task",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Task": {
+      "main": [
+        [
+          {
+            "node": "Initialize MCP",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initialize MCP": {
+      "main": [
+        [
+          {
+            "node": "Initialized notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initialized notification": {
+      "main": [
+        [
+          {
+            "node": "Call RetryProof",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call RetryProof": {
+      "main": [
+        [
+          {
+            "node": "Interpret result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "active": false,
+  "pinData": {},
+  "tags": []
+}

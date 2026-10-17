@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-10-17T05:42:21.556Z",
+  "passed": true,
+  "procedure": [
+    "Extract delivery ZIP into a separate directory",
+    "npm ci --ignore-scripts",
+    "npm run verify"
+  ],
+  "source_sha256": "463a2a12980f3794f29fd79aadb9d1d492e5a9600e665d435e738b336a648e56",
+  "lockfile_sha256": "311117e0b50ae3a294e100fba9026a4082430e19d389ba7e2aba6ac1439418cd",
+  "tests": {
+    "tests": "54",
+    "pass": "54",
+    "fail": "0"
+  },
+  "scope": "Local deterministic sandbox execution and mocked GitHub REST contract tests; no GitHub account writes, n8n UI run, NitroStudio UI run, Docker build or cloud deployment performed."
+}
