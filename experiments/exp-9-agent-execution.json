@@ -1,0 +1,247 @@
+{
+  "experiment": 9,
+  "name": "My API-powered AI agent: Model-selected MCP execution",
+  "task": {
+    "request_id": "exp-agent-handoff-014",
+    "title": "[Experiment] Preserve the approved task during agent execution -014",
+    "body": "Create this exact issue and one linked tracking record. Acceptance: the request ID, title and body reach RetryProof unchanged, and success is reported only from a verified MCP receipt."
+  },
+  "agent_run": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "tool": "rp_start_workflow",
+    "receipt": {
+      "request_id": "exp-agent-handoff-014",
+      "status": "completed",
+      "operations": [
+        {
+          "key": "exp-agent-handoff-014:issue",
+          "runId": "exp-agent-handoff-014",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[Experiment] Preserve the approved task during agent execution -014",
+            "body": "Create this exact issue and one linked tracking record. Acceptance: the request ID, title and body reach RetryProof unchanged, and success is reported only from a verified MCP receipt.",
+            "sourceId": ""
+          },
+          "fingerprint": "fdf2e6e58d964cdff65adfc8555e9bdc312d61be8b11884a5b605129ab8bbc56",
+          "marker": "rp_9e1f34f6ec9226970c150c2564a581c8b854d1f90dec455c0fd180d82d3a63b3",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+              "marker": "rp_9e1f34f6ec9226970c150c2564a581c8b854d1f90dec455c0fd180d82d3a63b3",
+              "target": "sandbox:issues",
+              "title": "[Experiment] Preserve the approved task during agent execution -014",
+              "body": "Create this exact issue and one linked tracking record. Acceptance: the request ID, title and body reach RetryProof unchanged, and success is reported only from a verified MCP receipt.",
+              "sourceId": "",
+              "url": "https://sandbox.retryproof.invalid/records/c4ba528f-a226-4d9d-b2ce-acc41eac9657"
+            },
+            "verifiedAt": "2026-10-17T08:06:53.137Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        },
+        {
+          "key": "exp-agent-handoff-014:tracking",
+          "runId": "exp-agent-handoff-014",
+          "kind": "tracking",
+          "target": "local:release-board",
+          "payload": {
+            "title": "[Experiment] Preserve the approved task during agent execution -014",
+            "body": "https://sandbox.retryproof.invalid/records/c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+            "sourceId": "c4ba528f-a226-4d9d-b2ce-acc41eac9657"
+          },
+          "fingerprint": "8dcbac732fb28f6ebf28a56d5523accd6b9d5deacdf496885fd2a9df0f84fd53",
+          "marker": "rp_1585bb54964ee5b44f61b312ced4b3435fda7d642062b99b5ba16a9dc98b629a",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "c50e3cc4-673a-4ddf-b5d8-3749f0583f44",
+              "marker": "rp_1585bb54964ee5b44f61b312ced4b3435fda7d642062b99b5ba16a9dc98b629a",
+              "target": "local:release-board",
+              "title": "[Experiment] Preserve the approved task during agent execution -014",
+              "body": "https://sandbox.retryproof.invalid/records/c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+              "sourceId": "c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+              "url": "https://sandbox.retryproof.invalid/records/c50e3cc4-673a-4ddf-b5d8-3749f0583f44"
+            },
+            "verifiedAt": "2026-10-17T08:06:53.146Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        }
+      ],
+      "events": [
+        {
+          "seq": 1,
+          "operationKey": "exp-agent-handoff-014:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:06:53.127Z"
+        },
+        {
+          "seq": 2,
+          "operationKey": "exp-agent-handoff-014:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:06:53.128Z"
+        },
+        {
+          "seq": 3,
+          "operationKey": "exp-agent-handoff-014:issue",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:06:53.137Z"
+        },
+        {
+          "seq": 4,
+          "operationKey": "exp-agent-handoff-014:tracking",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:06:53.138Z"
+        },
+        {
+          "seq": 5,
+          "operationKey": "exp-agent-handoff-014:tracking",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:06:53.139Z"
+        },
+        {
+          "seq": 6,
+          "operationKey": "exp-agent-handoff-014:tracking",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:06:53.146Z"
+        }
+      ],
+      "event_count": 6,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    },
+    "message": "The model selected the MCP action; the status and evidence below come from RetryProof, not generated text."
+  },
+  "agent_recover": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "tool": "rp_resume_workflow",
+    "receipt": {
+      "request_id": "exp-agent-handoff-014",
+      "status": "completed",
+      "operations": [
+        {
+          "key": "exp-agent-handoff-014:issue",
+          "runId": "exp-agent-handoff-014",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[Experiment] Preserve the approved task during agent execution -014",
+            "body": "Create this exact issue and one linked tracking record. Acceptance: the request ID, title and body reach RetryProof unchanged, and success is reported only from a verified MCP receipt.",
+            "sourceId": ""
+          },
+          "fingerprint": "fdf2e6e58d964cdff65adfc8555e9bdc312d61be8b11884a5b605129ab8bbc56",
+          "marker": "rp_9e1f34f6ec9226970c150c2564a581c8b854d1f90dec455c0fd180d82d3a63b3",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+              "marker": "rp_9e1f34f6ec9226970c150c2564a581c8b854d1f90dec455c0fd180d82d3a63b3",
+              "target": "sandbox:issues",
+              "title": "[Experiment] Preserve the approved task during agent execution -014",
+              "body": "Create this exact issue and one linked tracking record. Acceptance: the request ID, title and body reach RetryProof unchanged, and success is reported only from a verified MCP receipt.",
+              "sourceId": "",
+              "url": "https://sandbox.retryproof.invalid/records/c4ba528f-a226-4d9d-b2ce-acc41eac9657"
+            },
+            "verifiedAt": "2026-10-17T08:06:53.137Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        },
+        {
+          "key": "exp-agent-handoff-014:tracking",
+          "runId": "exp-agent-handoff-014",
+          "kind": "tracking",
+          "target": "local:release-board",
+          "payload": {
+            "title": "[Experiment] Preserve the approved task during agent execution -014",
+            "body": "https://sandbox.retryproof.invalid/records/c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+            "sourceId": "c4ba528f-a226-4d9d-b2ce-acc41eac9657"
+          },
+          "fingerprint": "8dcbac732fb28f6ebf28a56d5523accd6b9d5deacdf496885fd2a9df0f84fd53",
+          "marker": "rp_1585bb54964ee5b44f61b312ced4b3435fda7d642062b99b5ba16a9dc98b629a",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "c50e3cc4-673a-4ddf-b5d8-3749f0583f44",
+              "marker": "rp_1585bb54964ee5b44f61b312ced4b3435fda7d642062b99b5ba16a9dc98b629a",
+              "target": "local:release-board",
+              "title": "[Experiment] Preserve the approved task during agent execution -014",
+              "body": "https://sandbox.retryproof.invalid/records/c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+              "sourceId": "c4ba528f-a226-4d9d-b2ce-acc41eac9657",
+              "url": "https://sandbox.retryproof.invalid/records/c50e3cc4-673a-4ddf-b5d8-3749f0583f44"
+            },
+            "verifiedAt": "2026-10-17T08:06:53.146Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        }
+      ],
+      "events": [
+        {
+          "seq": 1,
+          "operationKey": "exp-agent-handoff-014:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:06:53.127Z"
+        },
+        {
+          "seq": 2,
+          "operationKey": "exp-agent-handoff-014:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:06:53.128Z"
+        },
+        {
+          "seq": 3,
+          "operationKey": "exp-agent-handoff-014:issue",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:06:53.137Z"
+        },
+        {
+          "seq": 4,
+          "operationKey": "exp-agent-handoff-014:tracking",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:06:53.138Z"
+        },
+        {
+          "seq": 5,
+          "operationKey": "exp-agent-handoff-014:tracking",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:06:53.139Z"
+        },
+        {
+          "seq": 6,
+          "operationKey": "exp-agent-handoff-014:tracking",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:06:53.146Z"
+        }
+      ],
+      "event_count": 6,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    },
+    "message": "The model selected the MCP action; the status and evidence below come from RetryProof, not generated text."
+  }
+}

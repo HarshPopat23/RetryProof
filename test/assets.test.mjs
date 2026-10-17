@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
+import { resolve, dirname, sep } from 'node:path';
 
 test('n8n example is a connected import design with no embedded credentials', () => {
   const text = readFileSync('examples/n8n-workflow.json', 'utf8'), w = JSON.parse(text);
@@ -29,7 +29,7 @@ test('all relative markdown file links resolve inside the project', () => {
       const target = match[1].split('#')[0];
       if (!target || /^[a-z]+:/i.test(target)) continue;
       const path = resolve(dirname(file), target);
-      assert.ok(path.startsWith(resolve('.') + '/'), `Escaping link in ${file}: ${target}`);
+      assert.ok(path.startsWith(resolve('.') + sep) || path === resolve('.'), `Escaping link in ${file}: ${target}`);
       assert.doesNotThrow(() => statSync(path), `Missing link in ${file}: ${target}`);
     }
   }

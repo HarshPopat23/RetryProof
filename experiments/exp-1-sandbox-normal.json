@@ -1,0 +1,142 @@
+{
+  "experiment": 1,
+  "name": "Local sandbox: Normal execution and completed replay",
+  "task": {
+    "request_id": "exp-sandbox-normal-014",
+    "title": "[Experiment] Handle an empty configuration file -014",
+    "body": "Reproduction: load a configuration file with zero bytes. Expected: return a clear validation error instead of crashing. Acceptance: the error identifies the empty file and the application remains running."
+  },
+  "receipt": {
+    "request_id": "exp-sandbox-normal-014",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "exp-sandbox-normal-014:issue",
+        "runId": "exp-sandbox-normal-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Handle an empty configuration file -014",
+          "body": "Reproduction: load a configuration file with zero bytes. Expected: return a clear validation error instead of crashing. Acceptance: the error identifies the empty file and the application remains running.",
+          "sourceId": ""
+        },
+        "fingerprint": "18b4fed7babb5a2c2d45fd2fdeee49ebe4d88820976a4894cb1f4be7e54c7378",
+        "marker": "rp_ad17bfc2a0adec51462e528d449a359f482b8b29eaadf4233f742da170ecf436",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "1f3fefaa-febb-43e4-9022-df50bf849b5e",
+            "marker": "rp_ad17bfc2a0adec51462e528d449a359f482b8b29eaadf4233f742da170ecf436",
+            "target": "sandbox:issues",
+            "title": "[Experiment] Handle an empty configuration file -014",
+            "body": "Reproduction: load a configuration file with zero bytes. Expected: return a clear validation error instead of crashing. Acceptance: the error identifies the empty file and the application remains running.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/1f3fefaa-febb-43e4-9022-df50bf849b5e"
+          },
+          "verifiedAt": "2026-10-17T08:06:15.647Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "exp-sandbox-normal-014:tracking",
+        "runId": "exp-sandbox-normal-014",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[Experiment] Handle an empty configuration file -014",
+          "body": "https://sandbox.retryproof.invalid/records/1f3fefaa-febb-43e4-9022-df50bf849b5e",
+          "sourceId": "1f3fefaa-febb-43e4-9022-df50bf849b5e"
+        },
+        "fingerprint": "e4177df45d032ab43519bcd7afd8030286a68e16b0552a6a38de5d3693bf26be",
+        "marker": "rp_4a23b630abeb9b2131ad1969919975e9e1b572b1b5d59db73c9f3bf506b4d9cd",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "a78d513f-5899-4020-bf5f-5b83168d79e9",
+            "marker": "rp_4a23b630abeb9b2131ad1969919975e9e1b572b1b5d59db73c9f3bf506b4d9cd",
+            "target": "local:release-board",
+            "title": "[Experiment] Handle an empty configuration file -014",
+            "body": "https://sandbox.retryproof.invalid/records/1f3fefaa-febb-43e4-9022-df50bf849b5e",
+            "sourceId": "1f3fefaa-febb-43e4-9022-df50bf849b5e",
+            "url": "https://sandbox.retryproof.invalid/records/a78d513f-5899-4020-bf5f-5b83168d79e9"
+          },
+          "verifiedAt": "2026-10-17T08:06:15.656Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "exp-sandbox-normal-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:15.639Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "exp-sandbox-normal-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:15.640Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "exp-sandbox-normal-014:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:15.648Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "exp-sandbox-normal-014:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:15.649Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "exp-sandbox-normal-014:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:15.649Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "exp-sandbox-normal-014:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:15.657Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "records": {
+    "issue": {
+      "id": "1f3fefaa-febb-43e4-9022-df50bf849b5e",
+      "marker": "rp_ad17bfc2a0adec51462e528d449a359f482b8b29eaadf4233f742da170ecf436",
+      "target": "sandbox:issues",
+      "title": "[Experiment] Handle an empty configuration file -014",
+      "body": "Reproduction: load a configuration file with zero bytes. Expected: return a clear validation error instead of crashing. Acceptance: the error identifies the empty file and the application remains running.",
+      "sourceId": "",
+      "url": "https://sandbox.retryproof.invalid/records/1f3fefaa-febb-43e4-9022-df50bf849b5e"
+    },
+    "tracking": {
+      "id": "a78d513f-5899-4020-bf5f-5b83168d79e9",
+      "marker": "rp_4a23b630abeb9b2131ad1969919975e9e1b572b1b5d59db73c9f3bf506b4d9cd",
+      "target": "local:release-board",
+      "title": "[Experiment] Handle an empty configuration file -014",
+      "body": "https://sandbox.retryproof.invalid/records/1f3fefaa-febb-43e4-9022-df50bf849b5e",
+      "sourceId": "1f3fefaa-febb-43e4-9022-df50bf849b5e",
+      "url": "https://sandbox.retryproof.invalid/records/a78d513f-5899-4020-bf5f-5b83168d79e9"
+    }
+  }
+}

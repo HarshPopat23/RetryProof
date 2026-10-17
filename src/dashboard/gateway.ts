@@ -52,6 +52,7 @@ export class ConnectedGateway implements Gateway {
     const result = await this.client.listTools(undefined, { timeout: 15000 });
     if (![...PUBLIC_TOOLS].every(name => result.tools.some(t => t.name === name)))
       throw new Error('This endpoint does not expose all four RetryProof tools');
+    unpack(await this.client.callTool({ name: 'rp_discover_capabilities', arguments: {} }, undefined, { timeout: 15000 }) as CallToolResult);
   }
   async call(name: string, args: Record<string, unknown>): Promise<unknown> {
     if (!PUBLIC_TOOLS.has(name)) throw new Error('Unsupported tool');

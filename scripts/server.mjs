@@ -7,7 +7,7 @@ import { initialize } from '../dist/mcp/runtime.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const root = join(__dirname, '..');
-const uiDir = join(root, 'ui');
+const uiDir = join(root, 'web');
 
 const config = configuration({
   RP_DATA_DIR: join(root, 'data'),

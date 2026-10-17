@@ -1,0 +1,235 @@
+{
+  "experiment": 5,
+  "name": "NitroStudio / MCP client: Shared execution and replay",
+  "task": {
+    "request_id": "exp-client-shared-014",
+    "title": "[Experiment] Share one handoff across two clients -014",
+    "body": "Create this issue and its linked tracking record through the MCP client. The dashboard must later recover the same saved task without duplicating either record."
+  },
+  "client_receipt": {
+    "request_id": "exp-client-shared-014",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "exp-client-shared-014:issue",
+        "runId": "exp-client-shared-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Share one handoff across two clients -014",
+          "body": "Create this issue and its linked tracking record through the MCP client. The dashboard must later recover the same saved task without duplicating either record.",
+          "sourceId": ""
+        },
+        "fingerprint": "43aa09d724f44b6f9475a8eaa4f77de43fee865876ad23d0916de6834d47b54e",
+        "marker": "rp_2a9d477d0e22167ed2837c6a9a64b7a9a4d361f406ad7807c8c83fb203c5fbb9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "d9dc3089-0987-4667-b65e-757fc270df72",
+            "marker": "rp_2a9d477d0e22167ed2837c6a9a64b7a9a4d361f406ad7807c8c83fb203c5fbb9",
+            "target": "sandbox:issues",
+            "title": "[Experiment] Share one handoff across two clients -014",
+            "body": "Create this issue and its linked tracking record through the MCP client. The dashboard must later recover the same saved task without duplicating either record.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/d9dc3089-0987-4667-b65e-757fc270df72"
+          },
+          "verifiedAt": "2026-10-17T08:06:45.134Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "exp-client-shared-014:tracking",
+        "runId": "exp-client-shared-014",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[Experiment] Share one handoff across two clients -014",
+          "body": "https://sandbox.retryproof.invalid/records/d9dc3089-0987-4667-b65e-757fc270df72",
+          "sourceId": "d9dc3089-0987-4667-b65e-757fc270df72"
+        },
+        "fingerprint": "bbb2ebe96340c2b703b408e37fbaad59f9b8e1668386c13048f1269e5eae38cd",
+        "marker": "rp_69cd822c8f5208630a74c6e14c971288253cffa11a2947b9e25f9619bba5f628",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "e79cadc4-da1c-496f-acac-103b862e4ddc",
+            "marker": "rp_69cd822c8f5208630a74c6e14c971288253cffa11a2947b9e25f9619bba5f628",
+            "target": "local:release-board",
+            "title": "[Experiment] Share one handoff across two clients -014",
+            "body": "https://sandbox.retryproof.invalid/records/d9dc3089-0987-4667-b65e-757fc270df72",
+            "sourceId": "d9dc3089-0987-4667-b65e-757fc270df72",
+            "url": "https://sandbox.retryproof.invalid/records/e79cadc4-da1c-496f-acac-103b862e4ddc"
+          },
+          "verifiedAt": "2026-10-17T08:06:45.143Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "exp-client-shared-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:45.125Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "exp-client-shared-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:45.126Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "exp-client-shared-014:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:45.134Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "exp-client-shared-014:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:45.135Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "exp-client-shared-014:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:45.136Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "exp-client-shared-014:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:45.143Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "dashboard_receipt": {
+    "request_id": "exp-client-shared-014",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "exp-client-shared-014:issue",
+        "runId": "exp-client-shared-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Share one handoff across two clients -014",
+          "body": "Create this issue and its linked tracking record through the MCP client. The dashboard must later recover the same saved task without duplicating either record.",
+          "sourceId": ""
+        },
+        "fingerprint": "43aa09d724f44b6f9475a8eaa4f77de43fee865876ad23d0916de6834d47b54e",
+        "marker": "rp_2a9d477d0e22167ed2837c6a9a64b7a9a4d361f406ad7807c8c83fb203c5fbb9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "d9dc3089-0987-4667-b65e-757fc270df72",
+            "marker": "rp_2a9d477d0e22167ed2837c6a9a64b7a9a4d361f406ad7807c8c83fb203c5fbb9",
+            "target": "sandbox:issues",
+            "title": "[Experiment] Share one handoff across two clients -014",
+            "body": "Create this issue and its linked tracking record through the MCP client. The dashboard must later recover the same saved task without duplicating either record.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/d9dc3089-0987-4667-b65e-757fc270df72"
+          },
+          "verifiedAt": "2026-10-17T08:06:45.134Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "exp-client-shared-014:tracking",
+        "runId": "exp-client-shared-014",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[Experiment] Share one handoff across two clients -014",
+          "body": "https://sandbox.retryproof.invalid/records/d9dc3089-0987-4667-b65e-757fc270df72",
+          "sourceId": "d9dc3089-0987-4667-b65e-757fc270df72"
+        },
+        "fingerprint": "bbb2ebe96340c2b703b408e37fbaad59f9b8e1668386c13048f1269e5eae38cd",
+        "marker": "rp_69cd822c8f5208630a74c6e14c971288253cffa11a2947b9e25f9619bba5f628",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "e79cadc4-da1c-496f-acac-103b862e4ddc",
+            "marker": "rp_69cd822c8f5208630a74c6e14c971288253cffa11a2947b9e25f9619bba5f628",
+            "target": "local:release-board",
+            "title": "[Experiment] Share one handoff across two clients -014",
+            "body": "https://sandbox.retryproof.invalid/records/d9dc3089-0987-4667-b65e-757fc270df72",
+            "sourceId": "d9dc3089-0987-4667-b65e-757fc270df72",
+            "url": "https://sandbox.retryproof.invalid/records/e79cadc4-da1c-496f-acac-103b862e4ddc"
+          },
+          "verifiedAt": "2026-10-17T08:06:45.143Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "exp-client-shared-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:45.125Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "exp-client-shared-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:45.126Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "exp-client-shared-014:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:45.134Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "exp-client-shared-014:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:45.135Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "exp-client-shared-014:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:45.136Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "exp-client-shared-014:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:45.143Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  }
+}

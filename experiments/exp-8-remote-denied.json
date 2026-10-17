@@ -1,0 +1,10 @@
+{
+  "experiment": 8,
+  "name": "Remote MCP: Reject wrong bearer token",
+  "rejected_response": {
+    "error": "Remote MCP connection failed. Check its URL, bearer token and RetryProof tool availability."
+  },
+  "unused_id_check": {
+    "error": "The operation could not be verified. Check the connection and receipt before retrying with the same request ID."
+  }
+}

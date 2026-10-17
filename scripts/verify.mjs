@@ -19,7 +19,8 @@ function sourceHash() {
 }
 function run(name, executable, args) {
   console.log(`Checking ${name}...`);
-  const r = spawnSync(executable, args, { cwd: root, encoding: 'utf8', timeout: 180000, maxBuffer: 10 * 1024 * 1024 });
+  const isBatch = typeof executable === 'string' && (executable.endsWith('.cmd') || executable.endsWith('.bat'));
+  const r = spawnSync(executable, args, { cwd: root, encoding: 'utf8', timeout: 180000, maxBuffer: 10 * 1024 * 1024, shell: isBatch });
   const result = { name, passed: r.status === 0 && !r.error, exit_code: r.status,
     output: `${r.stdout ?? ''}${r.stderr ?? ''}`, ...(r.error ? { error: r.error.message } : {}) };
   checks.push(result); if (!result.passed) console.error(result.output);

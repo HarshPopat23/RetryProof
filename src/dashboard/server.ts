@@ -187,7 +187,7 @@ export async function startDashboard(options: DashboardOptions) {
       // Never return upstream tool/model payloads or credential-containing stacks.
       const message = error instanceof z.ZodError ? 'Check the required fields and input limits.'
         : error instanceof Error ? error.message : 'Request failed';
-      const safeMessages = ['Choose ', 'Use an MCP ', 'Remote origin ', 'Could not ', 'GitHub access ', 'Model provider ',
+      const safeMessages = ['Choose ', 'Use an MCP ', 'Remote origin ', 'Remote MCP ', 'Could not ', 'GitHub access ', 'Model provider ',
         'The model ', 'This endpoint ', 'JSON content ', 'Request too ', 'Invalid session'];
       reply(res, 400, { error: safeMessages.some(prefix => message.startsWith(prefix)) ? message : 'The operation could not be verified. Check the connection and receipt before retrying with the same request ID.' });
     }

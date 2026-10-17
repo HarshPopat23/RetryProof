@@ -1,0 +1,235 @@
+{
+  "experiment": 7,
+  "name": "Remote MCP: Execution survives dashboard reconnect",
+  "task": {
+    "request_id": "exp-remote-reconnect-014",
+    "title": "[Experiment] Recover a remote handoff after reconnect -014",
+    "body": "Execute this handoff on the connected RetryProof server. Disconnect the dashboard after completion, reconnect to the same server, and load the original receipt. Acceptance: recovery retains both external record IDs."
+  },
+  "receipt_before_disconnect": {
+    "request_id": "exp-remote-reconnect-014",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "exp-remote-reconnect-014:issue",
+        "runId": "exp-remote-reconnect-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Recover a remote handoff after reconnect -014",
+          "body": "Execute this handoff on the connected RetryProof server. Disconnect the dashboard after completion, reconnect to the same server, and load the original receipt. Acceptance: recovery retains both external record IDs.",
+          "sourceId": ""
+        },
+        "fingerprint": "954e7eb2e9e512c341a64726b20245fa6c5bd50a2697e671f357653640019dbe",
+        "marker": "rp_cea079441408f55fa0d2b90780cf8088a6c49aa0b90aa3904765b830eebe216e",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+            "marker": "rp_cea079441408f55fa0d2b90780cf8088a6c49aa0b90aa3904765b830eebe216e",
+            "target": "sandbox:issues",
+            "title": "[Experiment] Recover a remote handoff after reconnect -014",
+            "body": "Execute this handoff on the connected RetryProof server. Disconnect the dashboard after completion, reconnect to the same server, and load the original receipt. Acceptance: recovery retains both external record IDs.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/dbd8d847-ffe5-455e-9412-dd0bd9e1add1"
+          },
+          "verifiedAt": "2026-10-17T08:06:48.676Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "exp-remote-reconnect-014:tracking",
+        "runId": "exp-remote-reconnect-014",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[Experiment] Recover a remote handoff after reconnect -014",
+          "body": "https://sandbox.retryproof.invalid/records/dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+          "sourceId": "dbd8d847-ffe5-455e-9412-dd0bd9e1add1"
+        },
+        "fingerprint": "35d12c494616e59456ff9197dac9c72431c4900c677b64ea80d9814d6f9ac2c1",
+        "marker": "rp_712d9cdd3e7a7caf2fa1d5aeeb98fe1e56ca15b1273778e48405d7c76743c3f9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "34257453-ac86-435f-9fa5-cfd15ab09b86",
+            "marker": "rp_712d9cdd3e7a7caf2fa1d5aeeb98fe1e56ca15b1273778e48405d7c76743c3f9",
+            "target": "local:release-board",
+            "title": "[Experiment] Recover a remote handoff after reconnect -014",
+            "body": "https://sandbox.retryproof.invalid/records/dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+            "sourceId": "dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+            "url": "https://sandbox.retryproof.invalid/records/34257453-ac86-435f-9fa5-cfd15ab09b86"
+          },
+          "verifiedAt": "2026-10-17T08:06:48.689Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "exp-remote-reconnect-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:48.663Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "exp-remote-reconnect-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:48.664Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "exp-remote-reconnect-014:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:48.676Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "exp-remote-reconnect-014:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:48.678Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "exp-remote-reconnect-014:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:48.680Z"
+      },
+      {
+        "seq": 12,
+        "operationKey": "exp-remote-reconnect-014:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:48.690Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "receipt_after_reconnect": {
+    "request_id": "exp-remote-reconnect-014",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "exp-remote-reconnect-014:issue",
+        "runId": "exp-remote-reconnect-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Recover a remote handoff after reconnect -014",
+          "body": "Execute this handoff on the connected RetryProof server. Disconnect the dashboard after completion, reconnect to the same server, and load the original receipt. Acceptance: recovery retains both external record IDs.",
+          "sourceId": ""
+        },
+        "fingerprint": "954e7eb2e9e512c341a64726b20245fa6c5bd50a2697e671f357653640019dbe",
+        "marker": "rp_cea079441408f55fa0d2b90780cf8088a6c49aa0b90aa3904765b830eebe216e",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+            "marker": "rp_cea079441408f55fa0d2b90780cf8088a6c49aa0b90aa3904765b830eebe216e",
+            "target": "sandbox:issues",
+            "title": "[Experiment] Recover a remote handoff after reconnect -014",
+            "body": "Execute this handoff on the connected RetryProof server. Disconnect the dashboard after completion, reconnect to the same server, and load the original receipt. Acceptance: recovery retains both external record IDs.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/dbd8d847-ffe5-455e-9412-dd0bd9e1add1"
+          },
+          "verifiedAt": "2026-10-17T08:06:48.676Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "exp-remote-reconnect-014:tracking",
+        "runId": "exp-remote-reconnect-014",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[Experiment] Recover a remote handoff after reconnect -014",
+          "body": "https://sandbox.retryproof.invalid/records/dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+          "sourceId": "dbd8d847-ffe5-455e-9412-dd0bd9e1add1"
+        },
+        "fingerprint": "35d12c494616e59456ff9197dac9c72431c4900c677b64ea80d9814d6f9ac2c1",
+        "marker": "rp_712d9cdd3e7a7caf2fa1d5aeeb98fe1e56ca15b1273778e48405d7c76743c3f9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "34257453-ac86-435f-9fa5-cfd15ab09b86",
+            "marker": "rp_712d9cdd3e7a7caf2fa1d5aeeb98fe1e56ca15b1273778e48405d7c76743c3f9",
+            "target": "local:release-board",
+            "title": "[Experiment] Recover a remote handoff after reconnect -014",
+            "body": "https://sandbox.retryproof.invalid/records/dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+            "sourceId": "dbd8d847-ffe5-455e-9412-dd0bd9e1add1",
+            "url": "https://sandbox.retryproof.invalid/records/34257453-ac86-435f-9fa5-cfd15ab09b86"
+          },
+          "verifiedAt": "2026-10-17T08:06:48.689Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "exp-remote-reconnect-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:48.663Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "exp-remote-reconnect-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:48.664Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "exp-remote-reconnect-014:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:48.676Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "exp-remote-reconnect-014:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:48.678Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "exp-remote-reconnect-014:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:48.680Z"
+      },
+      {
+        "seq": 12,
+        "operationKey": "exp-remote-reconnect-014:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:48.690Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  }
+}

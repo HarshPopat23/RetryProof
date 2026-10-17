@@ -1,0 +1,207 @@
+{
+  "experiment": 6,
+  "name": "NitroStudio / MCP client: Hidden read and recovery",
+  "task": {
+    "request_id": "exp-client-hidden-014",
+    "title": "[Experiment] Wait for evidence before adding tracking -014",
+    "body": "Save the issue while verification reads temporarily hide it. Do not add a tracking record until the existing issue is visible and verified. Acceptance: repeated recovery never recreates the issue."
+  },
+  "hidden_receipt": {
+    "request_id": "exp-client-hidden-014",
+    "status": "paused",
+    "operations": [
+      {
+        "key": "exp-client-hidden-014:issue",
+        "runId": "exp-client-hidden-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Wait for evidence before adding tracking -014",
+          "body": "Save the issue while verification reads temporarily hide it. Do not add a tracking record until the existing issue is visible and verified. Acceptance: repeated recovery never recreates the issue.",
+          "sourceId": ""
+        },
+        "fingerprint": "6cf743a4a4f15a949259ba8585febc95df4a6e906942b02389a604b3105bf22e",
+        "marker": "rp_87cac4b9c48948871b1dcdbb6300c1b82f384964123a655404bb97fd606321a9",
+        "state": "unknown",
+        "evidence": null,
+        "attempts": 1,
+        "version": 4,
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated."
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:46.092Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:46.093Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:06:46.097Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:06:46.103Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:06:46.111Z"
+      }
+    ],
+    "event_count": 5,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "final_receipt": {
+    "request_id": "exp-client-hidden-014",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "exp-client-hidden-014:issue",
+        "runId": "exp-client-hidden-014",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[Experiment] Wait for evidence before adding tracking -014",
+          "body": "Save the issue while verification reads temporarily hide it. Do not add a tracking record until the existing issue is visible and verified. Acceptance: repeated recovery never recreates the issue.",
+          "sourceId": ""
+        },
+        "fingerprint": "6cf743a4a4f15a949259ba8585febc95df4a6e906942b02389a604b3105bf22e",
+        "marker": "rp_87cac4b9c48948871b1dcdbb6300c1b82f384964123a655404bb97fd606321a9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "1b63763b-2576-4d9f-9b81-a82b1ab74a6f",
+            "marker": "rp_87cac4b9c48948871b1dcdbb6300c1b82f384964123a655404bb97fd606321a9",
+            "target": "sandbox:issues",
+            "title": "[Experiment] Wait for evidence before adding tracking -014",
+            "body": "Save the issue while verification reads temporarily hide it. Do not add a tracking record until the existing issue is visible and verified. Acceptance: repeated recovery never recreates the issue.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/1b63763b-2576-4d9f-9b81-a82b1ab74a6f"
+          },
+          "verifiedAt": "2026-10-17T08:06:46.122Z",
+          "method": "reconciled_read"
+        },
+        "attempts": 1,
+        "version": 5,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "exp-client-hidden-014:tracking",
+        "runId": "exp-client-hidden-014",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[Experiment] Wait for evidence before adding tracking -014",
+          "body": "https://sandbox.retryproof.invalid/records/1b63763b-2576-4d9f-9b81-a82b1ab74a6f",
+          "sourceId": "1b63763b-2576-4d9f-9b81-a82b1ab74a6f"
+        },
+        "fingerprint": "ce85dd08e940fa5a3c5c03bcb2f6f5667a9a85ad99838953514c609b5aaace88",
+        "marker": "rp_9711527224f4a28449bfbed6e7fbf71f607698b9ca9b9f6ad1099c2fcce87dff",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "1269d005-98fd-41dc-adff-02ed70e9b2cd",
+            "marker": "rp_9711527224f4a28449bfbed6e7fbf71f607698b9ca9b9f6ad1099c2fcce87dff",
+            "target": "local:release-board",
+            "title": "[Experiment] Wait for evidence before adding tracking -014",
+            "body": "https://sandbox.retryproof.invalid/records/1b63763b-2576-4d9f-9b81-a82b1ab74a6f",
+            "sourceId": "1b63763b-2576-4d9f-9b81-a82b1ab74a6f",
+            "url": "https://sandbox.retryproof.invalid/records/1269d005-98fd-41dc-adff-02ed70e9b2cd"
+          },
+          "verifiedAt": "2026-10-17T08:06:46.128Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:46.092Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:46.093Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:06:46.097Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:06:46.103Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:06:46.111Z"
+      },
+      {
+        "seq": 12,
+        "operationKey": "exp-client-hidden-014:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:46.122Z"
+      },
+      {
+        "seq": 13,
+        "operationKey": "exp-client-hidden-014:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:06:46.123Z"
+      },
+      {
+        "seq": 14,
+        "operationKey": "exp-client-hidden-014:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:06:46.124Z"
+      },
+      {
+        "seq": 15,
+        "operationKey": "exp-client-hidden-014:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:06:46.128Z"
+      }
+    ],
+    "event_count": 9,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  }
+}
