@@ -11,3 +11,4 @@ data/
 coverage/
 output/
 .DS_Store
+*.zip
