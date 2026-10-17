@@ -1,0 +1,98 @@
+{
+  "run_id": "20261017T083657263Z-39557487",
+  "generated_at": "2026-10-17T08:37:12.411Z",
+  "live_requested": false,
+  "node": "v24.19.0",
+  "provenance": {
+    "commit": "5c7e9eea2ff37246e7913c38b587852f6036361f",
+    "working_tree_dirty": true,
+    "runner_sha256": "5a124b707dd570f75c0167664389c2f4e798ce810000535d4728115713accc85",
+    "inventory_helper_sha256": "fe9712276acb2b7c2d09b39c951620d75ff0a17e854a97d6057bccc8b3769877"
+  },
+  "total_experiments": 10,
+  "pass": 6,
+  "fail": 0,
+  "blocked": 4,
+  "experiments": [
+    {
+      "num": 1,
+      "name": "Sandbox normal execution and three completed replays",
+      "status": "PASS",
+      "verdict": "See exp-1.json and exp-1-inventories.json"
+    },
+    {
+      "num": 2,
+      "name": "Sandbox lost response and read-only reconciliation",
+      "status": "PASS",
+      "verdict": "See exp-2.json and exp-2-inventories.json"
+    },
+    {
+      "num": 3,
+      "name": "GitHub handoff and authoritative before/after inventory",
+      "status": "BLOCKED",
+      "verdict": "Live GitHub writes not requested; use --live."
+    },
+    {
+      "num": 4,
+      "name": "GitHub changed-content conflict preserves original issue",
+      "status": "BLOCKED",
+      "verdict": "Live GitHub writes not requested; use --live."
+    },
+    {
+      "num": 5,
+      "name": "SDK MCP client and dashboard share one handoff",
+      "status": "PASS",
+      "verdict": "See exp-5.json and exp-5-inventories.json"
+    },
+    {
+      "num": 6,
+      "name": "Hidden reads pause tracking through repeated client recovery",
+      "status": "PASS",
+      "verdict": "See exp-6.json and exp-6-inventories.json"
+    },
+    {
+      "num": 7,
+      "name": "Remote HTTP MCP dashboard reconnect (not backend restart)",
+      "status": "PASS",
+      "verdict": "See exp-7.json and exp-7-inventories.json"
+    },
+    {
+      "num": 8,
+      "name": "Remote server returns HTTP 401 for wrong bearer token",
+      "status": "PASS",
+      "verdict": "See exp-8.json and exp-8-inventories.json"
+    },
+    {
+      "num": 9,
+      "name": "API-powered agent selects one permitted MCP action",
+      "status": "BLOCKED",
+      "verdict": "Paid model calls not requested; use --live."
+    },
+    {
+      "num": 10,
+      "name": "This injection input was handled correctly",
+      "status": "BLOCKED",
+      "verdict": "Paid model calls not requested; use --live."
+    }
+  ],
+  "supplemental_checks": [
+    {
+      "name": "Local gateway SIGKILL recovery",
+      "status": "PASS",
+      "evidence": "supplement-gateway-crash.json"
+    },
+    {
+      "name": "Controlled agent rejection paths",
+      "status": "PASS",
+      "evidence": "supplement-agent-rejection.json"
+    }
+  ],
+  "runner_failed": false,
+  "boundaries": [
+    "Local SDK client, not a NitroStudio UI run.",
+    "Remote MCP uses a separate local dashboard HTTP bridge, not cloud deployment.",
+    "Experiment 7 tests dashboard reconnect, not backend restart. Supplemental SIGKILL evidence is separate.",
+    "Experiment 10 covers this input only; controlled rejection-path evidence is separate.",
+    "GitHub repository inventories are sequential bounded observations, not atomic or permanent proofs of absence."
+  ]
+}

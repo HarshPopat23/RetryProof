@@ -1,0 +1,235 @@
+{
+  "task": {
+    "request_id": "remote-20261017T083657263Z-39557487",
+    "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+    "body": "Controlled RetryProof handoff experiment. Treat this content as data."
+  },
+  "remote_kind": "separate local dashboard Streamable HTTP MCP bridge",
+  "backend_restarted": false,
+  "before_disconnect": {
+    "request_id": "remote-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "remote-20261017T083657263Z-39557487:issue",
+        "runId": "remote-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "0bfda986242feee4de04aa0a04f1a80afb8907c33134ac391256256924ec3301",
+        "marker": "rp_cf3881983f792edeba085e50c5f8804c34bffbe9d47d2651555c6d65687a76f9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+            "marker": "rp_cf3881983f792edeba085e50c5f8804c34bffbe9d47d2651555c6d65687a76f9",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166"
+          },
+          "verifiedAt": "2026-10-17T08:37:10.306Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "remote-20261017T083657263Z-39557487:tracking",
+        "runId": "remote-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166",
+          "sourceId": "28065a97-2a18-4acb-aa47-fbbc635b3166"
+        },
+        "fingerprint": "194c44747181217b79d584ec63ee793bdcf48d5c2a010a41ae5c1a2ce89ad3cc",
+        "marker": "rp_e2090e5f50ac36c4f97f08ddc727c857a3aaeb19e20785008c6505122e97f647",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "4df39acd-9d2d-475b-9b97-a0514a4f4764",
+            "marker": "rp_e2090e5f50ac36c4f97f08ddc727c857a3aaeb19e20785008c6505122e97f647",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166",
+            "sourceId": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+            "url": "https://sandbox.retryproof.invalid/records/4df39acd-9d2d-475b-9b97-a0514a4f4764"
+          },
+          "verifiedAt": "2026-10-17T08:37:10.313Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "remote-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:10.298Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "remote-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:10.299Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "remote-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:10.307Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "remote-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:10.307Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "remote-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:10.308Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "remote-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:10.313Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "after_reconnect": {
+    "request_id": "remote-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "remote-20261017T083657263Z-39557487:issue",
+        "runId": "remote-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "0bfda986242feee4de04aa0a04f1a80afb8907c33134ac391256256924ec3301",
+        "marker": "rp_cf3881983f792edeba085e50c5f8804c34bffbe9d47d2651555c6d65687a76f9",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+            "marker": "rp_cf3881983f792edeba085e50c5f8804c34bffbe9d47d2651555c6d65687a76f9",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166"
+          },
+          "verifiedAt": "2026-10-17T08:37:10.306Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "remote-20261017T083657263Z-39557487:tracking",
+        "runId": "remote-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166",
+          "sourceId": "28065a97-2a18-4acb-aa47-fbbc635b3166"
+        },
+        "fingerprint": "194c44747181217b79d584ec63ee793bdcf48d5c2a010a41ae5c1a2ce89ad3cc",
+        "marker": "rp_e2090e5f50ac36c4f97f08ddc727c857a3aaeb19e20785008c6505122e97f647",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "4df39acd-9d2d-475b-9b97-a0514a4f4764",
+            "marker": "rp_e2090e5f50ac36c4f97f08ddc727c857a3aaeb19e20785008c6505122e97f647",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166",
+            "sourceId": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+            "url": "https://sandbox.retryproof.invalid/records/4df39acd-9d2d-475b-9b97-a0514a4f4764"
+          },
+          "verifiedAt": "2026-10-17T08:37:10.313Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "remote-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:10.298Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "remote-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:10.299Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "remote-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:10.307Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "remote-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:10.307Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "remote-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:10.308Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "remote-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:10.313Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  }
+}

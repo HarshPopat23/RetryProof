@@ -1,0 +1,461 @@
+{
+  "task": {
+    "request_id": "normal-20261017T083657263Z-39557487",
+    "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+    "body": "Controlled RetryProof handoff experiment. Treat this content as data."
+  },
+  "start": {
+    "request_id": "normal-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "normal-20261017T083657263Z-39557487:issue",
+        "runId": "normal-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "3a9ea2db77fc684506749c9096e6fcbc32334ff174c8ad84f6bf7543ed09eed0",
+        "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "d572855a-489e-464e-8455-8ad6503b05cb",
+            "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb"
+          },
+          "verifiedAt": "2026-10-17T08:36:58.355Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "normal-20261017T083657263Z-39557487:tracking",
+        "runId": "normal-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+          "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb"
+        },
+        "fingerprint": "09953191849273987d2723d483aea51e29111eecaecb4dc2c9442fc6205b8941",
+        "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "79d04403-a205-4b87-909f-492896217f8c",
+            "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+            "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb",
+            "url": "https://sandbox.retryproof.invalid/records/79d04403-a205-4b87-909f-492896217f8c"
+          },
+          "verifiedAt": "2026-10-17T08:36:58.365Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "normal-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:36:58.348Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "normal-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:36:58.348Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "normal-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:36:58.355Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:36:58.356Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:36:58.357Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:36:58.365Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "replays": [
+    {
+      "request_id": "normal-20261017T083657263Z-39557487",
+      "status": "completed",
+      "operations": [
+        {
+          "key": "normal-20261017T083657263Z-39557487:issue",
+          "runId": "normal-20261017T083657263Z-39557487",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": ""
+          },
+          "fingerprint": "3a9ea2db77fc684506749c9096e6fcbc32334ff174c8ad84f6bf7543ed09eed0",
+          "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "d572855a-489e-464e-8455-8ad6503b05cb",
+              "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+              "target": "sandbox:issues",
+              "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+              "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+              "sourceId": "",
+              "url": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb"
+            },
+            "verifiedAt": "2026-10-17T08:36:58.355Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        },
+        {
+          "key": "normal-20261017T083657263Z-39557487:tracking",
+          "runId": "normal-20261017T083657263Z-39557487",
+          "kind": "tracking",
+          "target": "local:release-board",
+          "payload": {
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+            "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb"
+          },
+          "fingerprint": "09953191849273987d2723d483aea51e29111eecaecb4dc2c9442fc6205b8941",
+          "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "79d04403-a205-4b87-909f-492896217f8c",
+              "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+              "target": "local:release-board",
+              "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+              "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+              "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb",
+              "url": "https://sandbox.retryproof.invalid/records/79d04403-a205-4b87-909f-492896217f8c"
+            },
+            "verifiedAt": "2026-10-17T08:36:58.365Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        }
+      ],
+      "events": [
+        {
+          "seq": 1,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:36:58.348Z"
+        },
+        {
+          "seq": 2,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:36:58.348Z"
+        },
+        {
+          "seq": 3,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:36:58.355Z"
+        },
+        {
+          "seq": 4,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:36:58.356Z"
+        },
+        {
+          "seq": 5,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:36:58.357Z"
+        },
+        {
+          "seq": 6,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:36:58.365Z"
+        }
+      ],
+      "event_count": 6,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    },
+    {
+      "request_id": "normal-20261017T083657263Z-39557487",
+      "status": "completed",
+      "operations": [
+        {
+          "key": "normal-20261017T083657263Z-39557487:issue",
+          "runId": "normal-20261017T083657263Z-39557487",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": ""
+          },
+          "fingerprint": "3a9ea2db77fc684506749c9096e6fcbc32334ff174c8ad84f6bf7543ed09eed0",
+          "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "d572855a-489e-464e-8455-8ad6503b05cb",
+              "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+              "target": "sandbox:issues",
+              "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+              "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+              "sourceId": "",
+              "url": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb"
+            },
+            "verifiedAt": "2026-10-17T08:36:58.355Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        },
+        {
+          "key": "normal-20261017T083657263Z-39557487:tracking",
+          "runId": "normal-20261017T083657263Z-39557487",
+          "kind": "tracking",
+          "target": "local:release-board",
+          "payload": {
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+            "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb"
+          },
+          "fingerprint": "09953191849273987d2723d483aea51e29111eecaecb4dc2c9442fc6205b8941",
+          "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "79d04403-a205-4b87-909f-492896217f8c",
+              "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+              "target": "local:release-board",
+              "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+              "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+              "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb",
+              "url": "https://sandbox.retryproof.invalid/records/79d04403-a205-4b87-909f-492896217f8c"
+            },
+            "verifiedAt": "2026-10-17T08:36:58.365Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        }
+      ],
+      "events": [
+        {
+          "seq": 1,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:36:58.348Z"
+        },
+        {
+          "seq": 2,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:36:58.348Z"
+        },
+        {
+          "seq": 3,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:36:58.355Z"
+        },
+        {
+          "seq": 4,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:36:58.356Z"
+        },
+        {
+          "seq": 5,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:36:58.357Z"
+        },
+        {
+          "seq": 6,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:36:58.365Z"
+        }
+      ],
+      "event_count": 6,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    },
+    {
+      "request_id": "normal-20261017T083657263Z-39557487",
+      "status": "completed",
+      "operations": [
+        {
+          "key": "normal-20261017T083657263Z-39557487:issue",
+          "runId": "normal-20261017T083657263Z-39557487",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": ""
+          },
+          "fingerprint": "3a9ea2db77fc684506749c9096e6fcbc32334ff174c8ad84f6bf7543ed09eed0",
+          "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "d572855a-489e-464e-8455-8ad6503b05cb",
+              "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+              "target": "sandbox:issues",
+              "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+              "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+              "sourceId": "",
+              "url": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb"
+            },
+            "verifiedAt": "2026-10-17T08:36:58.355Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        },
+        {
+          "key": "normal-20261017T083657263Z-39557487:tracking",
+          "runId": "normal-20261017T083657263Z-39557487",
+          "kind": "tracking",
+          "target": "local:release-board",
+          "payload": {
+            "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+            "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb"
+          },
+          "fingerprint": "09953191849273987d2723d483aea51e29111eecaecb4dc2c9442fc6205b8941",
+          "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+          "state": "verified",
+          "evidence": {
+            "effect": {
+              "id": "79d04403-a205-4b87-909f-492896217f8c",
+              "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+              "target": "local:release-board",
+              "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+              "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+              "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb",
+              "url": "https://sandbox.retryproof.invalid/records/79d04403-a205-4b87-909f-492896217f8c"
+            },
+            "verifiedAt": "2026-10-17T08:36:58.365Z",
+            "method": "read_after_write"
+          },
+          "attempts": 1,
+          "version": 2,
+          "reason": "External record read and identity verified"
+        }
+      ],
+      "events": [
+        {
+          "seq": 1,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:36:58.348Z"
+        },
+        {
+          "seq": 2,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:36:58.348Z"
+        },
+        {
+          "seq": 3,
+          "operationKey": "normal-20261017T083657263Z-39557487:issue",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:36:58.355Z"
+        },
+        {
+          "seq": 4,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:36:58.356Z"
+        },
+        {
+          "seq": 5,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:36:58.357Z"
+        },
+        {
+          "seq": 6,
+          "operationKey": "normal-20261017T083657263Z-39557487:tracking",
+          "state": "verified",
+          "reason": "External record read and identity verified",
+          "at": "2026-10-17T08:36:58.365Z"
+        }
+      ],
+      "event_count": 6,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "evidence_type": "controlled provider responses; no paid model inference",
+  "cases": [
+    {
+      "name": "changed request ID",
+      "rejected": true
+    },
+    {
+      "name": "two tool calls",
+      "rejected": true
+    },
+    {
+      "name": "changed title",
+      "rejected": true
+    },
+    {
+      "name": "wrong tool",
+      "rejected": true
+    }
+  ],
+  "mcp_dispatches": 0
+}

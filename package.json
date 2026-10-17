@@ -15,7 +15,9 @@
     "dashboard": "npm run build && node dist/dashboard/index.js",
     "dashboard:start": "node dist/dashboard/index.js",
     "test:browser": "npm run build && node scripts/browser-check.mjs",
-    "ui": "npm run build && node scripts/server.mjs"
+    "ui": "npm run build && node scripts/server.mjs",
+    "experiments:local": "npm run build && node scripts/run-10-experiments.mjs --local-only",
+    "experiments:live": "npm run build && node scripts/run-10-experiments.mjs --live"
   },
   "keywords": [],
   "author": "Harsh Popat",

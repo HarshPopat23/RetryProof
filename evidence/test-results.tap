@@ -2,411 +2,459 @@ TAP version 13
 # Subtest: n8n example is a connected import design with no embedded credentials
 ok 1 - n8n example is a connected import design with no embedded credentials
   ---
-  duration_ms: 1.037056
+  duration_ms: 0.960042
   type: 'test'
   ...
 # Subtest: all relative markdown file links resolve inside the project
 ok 2 - all relative markdown file links resolve inside the project
   ---
-  duration_ms: 4.793352
+  duration_ms: 1.571801
   type: 'test'
   ...
 # Subtest: successful handoff verifies both actual effects and records ordered events
 ok 3 - successful handoff verifies both actual effects and records ordered events
   ---
-  duration_ms: 14.23508
+  duration_ms: 15.014116
   type: 'test'
   ...
 # Subtest: lost write response pauses before downstream action, then recovery reuses the effect
 ok 4 - lost write response pauses before downstream action, then recovery reuses the effect
   ---
-  duration_ms: 9.482896
+  duration_ms: 10.163794
   type: 'test'
   ...
 # Subtest: gateway recreation over the same database recovers uncertain work
 ok 5 - gateway recreation over the same database recovers uncertain work
   ---
-  duration_ms: 8.623288
+  duration_ms: 9.625402
   type: 'test'
   ...
 # Subtest: record not observed after dispatch does not authorize a second write
 ok 6 - record not observed after dispatch does not authorize a second write
   ---
-  duration_ms: 14.633702
+  duration_ms: 14.994757
   type: 'test'
   ...
 # Subtest: verification outage never permits progress or a repeat write
 ok 7 - verification outage never permits progress or a repeat write
   ---
-  duration_ms: 9.544539
+  duration_ms: 10.830244
   type: 'test'
   ...
 # Subtest: duplicate matches block recovery until independently resolved
 ok 8 - duplicate matches block recovery until independently resolved
   ---
-  duration_ms: 8.849029
+  duration_ms: 11.419459
   type: 'test'
   ...
 # Subtest: human edits made before recovery are preserved and included in the receipt
 ok 9 - human edits made before recovery are preserved and included in the receipt
   ---
-  duration_ms: 8.669728
+  duration_ms: 9.479759
   type: 'test'
   ...
 # Subtest: same key with changed content is rejected before any new effect
 ok 10 - same key with changed content is rejected before any new effect
   ---
-  duration_ms: 8.620444
+  duration_ms: 11.865646
   type: 'test'
   ...
 # Subtest: intentional identical tasks with different request ids both execute
 ok 11 - intentional identical tasks with different request ids both execute
   ---
-  duration_ms: 9.907127
+  duration_ms: 14.318662
   type: 'test'
   ...
 # Subtest: concurrent calls sharing one engine dispatch once
 ok 12 - concurrent calls sharing one engine dispatch once
   ---
-  duration_ms: 30.320252
+  duration_ms: 32.388372
   type: 'test'
   ...
 # Subtest: two engines and SQLite connections cannot both claim the same dispatch
 ok 13 - two engines and SQLite connections cannot both claim the same dispatch
   ---
-  duration_ms: 27.226312
+  duration_ms: 28.869312
   type: 'test'
   ...
 # Subtest: workspace namespace prevents key collisions and receipt access
 ok 14 - workspace namespace prevents key collisions and receipt access
   ---
-  duration_ms: 11.762497
+  duration_ms: 14.407173
   type: 'test'
   ...
 # Subtest: changed signing key cannot silently rebind an uncertain operation
 ok 15 - changed signing key cannot silently rebind an uncertain operation
   ---
-  duration_ms: 6.395144
+  duration_ms: 8.149333
   type: 'test'
   ...
 # Subtest: changed destination cannot redirect a persisted workflow
 ok 16 - changed destination cannot redirect a persisted workflow
   ---
-  duration_ms: 6.420372
+  duration_ms: 7.413971
   type: 'test'
   ...
 # Subtest: mismatched marker cannot become a verified receipt
 ok 17 - mismatched marker cannot become a verified receipt
   ---
-  duration_ms: 6.720465
+  duration_ms: 7.877532
   type: 'test'
   ...
 # Subtest: mismatched target cannot become a verified receipt
 ok 18 - mismatched target cannot become a verified receipt
   ---
-  duration_ms: 6.697671
+  duration_ms: 7.530773
   type: 'test'
   ...
 # Subtest: mismatched sourceId cannot become a verified receipt
 ok 19 - mismatched sourceId cannot become a verified receipt
   ---
-  duration_ms: 6.744311
+  duration_ms: 8.261998
   type: 'test'
   ...
 # Subtest: mismatched id cannot become a verified receipt
 ok 20 - mismatched id cannot become a verified receipt
   ---
-  duration_ms: 7.159528
+  duration_ms: 8.879185
   type: 'test'
   ...
 # Subtest: mismatched url cannot become a verified receipt
 ok 21 - mismatched url cannot become a verified receipt
   ---
-  duration_ms: 7.088791
+  duration_ms: 8.028234
   type: 'test'
   ...
 # Subtest: tracking-step timeout recovers without recreating the source issue
 ok 22 - tracking-step timeout recovers without recreating the source issue
   ---
-  duration_ms: 7.970783
+  duration_ms: 8.998721
   type: 'test'
   ...
 # Subtest: repeat completion is stable and has no new dispatches
 ok 23 - repeat completion is stable and has no new dispatches
   ---
-  duration_ms: 29.784063
+  duration_ms: 28.724063
   type: 'test'
   ...
 # Subtest: crash window after dispatch claim but before send pauses instead of guessing
 ok 24 - crash window after dispatch claim but before send pauses instead of guessing
   ---
-  duration_ms: 6.883481
+  duration_ms: 8.038609
   type: 'test'
   ...
 # Subtest: stale worker cannot downgrade a receipt written by another worker
 ok 25 - stale worker cannot downgrade a receipt written by another worker
   ---
-  duration_ms: 8.640905
+  duration_ms: 13.55167
   type: 'test'
   ...
 # Subtest: unknown id and invalid state changes are explicit errors
 ok 26 - unknown id and invalid state changes are explicit errors
   ---
-  duration_ms: 7.772754
+  duration_ms: 11.362592
   type: 'test'
   ...
 # Subtest: fingerprints ignore field ordering and distinguish values
 ok 27 - fingerprints ignore field ordering and distinguish values
   ---
-  duration_ms: 0.190838
+  duration_ms: 0.138344
   type: 'test'
   ...
 # Subtest: configuration rejects public unauthenticated HTTP and invalid GitHub credentials
 ok 28 - configuration rejects public unauthenticated HTTP and invalid GitHub credentials
   ---
-  duration_ms: 0.35739
+  duration_ms: 0.476401
   type: 'test'
   ...
 # Subtest: repeated unknown outcomes keep the receipt bounded without deleting audit history
 ok 29 - repeated unknown outcomes keep the receipt bounded without deleting audit history
   ---
-  duration_ms: 164.571495
+  duration_ms: 185.949683
   type: 'test'
   ...
 # Subtest: run registered before step preparation resumes after a crash
 ok 30 - run registered before step preparation resumes after a crash
   ---
-  duration_ms: 7.823601
+  duration_ms: 8.48173
   type: 'test'
   ...
 # Subtest: seeded mixed fault sequences preserve effect-count and source-link invariants
 ok 31 - seeded mixed fault sequences preserve effect-count and source-link invariants
   ---
-  duration_ms: 349.890206
+  duration_ms: 358.409191
   type: 'test'
   ...
 # Subtest: read-only provider preflight failure leaves undispatched work safely retryable
 ok 32 - read-only provider preflight failure leaves undispatched work safely retryable
   ---
-  duration_ms: 9.37346
+  duration_ms: 8.326221
   type: 'test'
   ...
 # Subtest: dashboard serves the uploaded theme and connects real sandbox API routes
 ok 33 - dashboard serves the uploaded theme and connects real sandbox API routes
   ---
-  duration_ms: 1915.614403
+  duration_ms: 1158.587652
   type: 'test'
   ...
 # Subtest: dashboard credentials/CSRF session are required and cross-origin calls are blocked
 ok 34 - dashboard credentials/CSRF session are required and cross-origin calls are blocked
   ---
-  duration_ms: 23.236708
+  duration_ms: 16.255936
   type: 'test'
   ...
 # Subtest: browser sessions do not inherit another browser session connection or keys
 ok 35 - browser sessions do not inherit another browser session connection or keys
   ---
-  duration_ms: 345.365175
+  duration_ms: 648.146484
   type: 'test'
   ...
 # Subtest: sandbox hidden-read injection routes to real MCP state and recovery clears it
 ok 36 - sandbox hidden-read injection routes to real MCP state and recovery clears it
   ---
-  duration_ms: 2671.928547
+  duration_ms: 1336.063916
   type: 'test'
   ...
 # Subtest: MCP client setup exports a real token-protected endpoint without returning its token
 ok 37 - MCP client setup exports a real token-protected endpoint without returning its token
   ---
-  duration_ms: 1292.891874
+  duration_ms: 736.460821
   type: 'test'
   ...
 # Subtest: remote setup forwards a workflow to an actual second RetryProof MCP endpoint
 ok 38 - remote setup forwards a workflow to an actual second RetryProof MCP endpoint
   ---
-  duration_ms: 1202.876209
+  duration_ms: 681.097506
   type: 'test'
   ...
 # Subtest: remote policy rejects unapproved origins, embedded credentials and non-HTTPS internet targets
 ok 39 - remote policy rejects unapproved origins, embedded credentials and non-HTTPS internet targets
   ---
-  duration_ms: 0.677187
+  duration_ms: 0.774148
   type: 'test'
   ...
 # Subtest: GitHub settings validate read access without returning credentials or creating an issue
 ok 40 - GitHub settings validate read access without returning credentials or creating an issue
   ---
-  duration_ms: 713.077638
+  duration_ms: 708.473278
   type: 'test'
   ...
 # Subtest: agent settings perform an actual bounded function-call request and execute the permitted MCP action
 ok 41 - agent settings perform an actual bounded function-call request and execute the permitted MCP action
   ---
-  duration_ms: 1281.206733
+  duration_ms: 1065.412736
   type: 'test'
   ...
 # Subtest: agent rejects changed task identity and multiple calls before any MCP mutation
 ok 42 - agent rejects changed task identity and multiple calls before any MCP mutation
   ---
-  duration_ms: 2.082707
+  duration_ms: 1.283297
   type: 'test'
   ...
 # Subtest: disconnect releases the profile while reconnecting the same workspace preserves the ledger
 ok 43 - disconnect releases the profile while reconnecting the same workspace preserves the ledger
   ---
-  duration_ms: 1733.499943
+  duration_ms: 1676.540088
   type: 'test'
   ...
 # Subtest: failed replacement configuration preserves the previous active connection
 ok 44 - failed replacement configuration preserves the previous active connection
   ---
-  duration_ms: 1007.706531
+  duration_ms: 719.935203
   type: 'test'
   ...
 # Subtest: a second operation cannot change connections while a provider check is pending
 ok 45 - a second operation cannot change connections while a provider check is pending
   ---
-  duration_ms: 330.479194
+  duration_ms: 656.853588
+  type: 'test'
+  ...
+# Subtest: inventory oracle rejects extra marker matches instead of taking the first record
+ok 46 - inventory oracle rejects extra marker matches instead of taking the first record
+  ---
+  duration_ms: 3.153577
+  type: 'test'
+  ...
+# Subtest: inventory oracle rejects tracking dispatch before issue verification
+ok 47 - inventory oracle rejects tracking dispatch before issue verification
+  ---
+  duration_ms: 0.369714
+  type: 'test'
+  ...
+# Subtest: agent result B requires a known rejection and no effects, not a generic provider or connection failure
+ok 48 - agent result B requires a known rejection and no effects, not a generic provider or connection failure
+  ---
+  duration_ms: 0.705988
+  type: 'test'
+  ...
+# Subtest: agent result A requires literal approved content, not just a completed receipt
+ok 49 - agent result A requires literal approved content, not just a completed receipt
+  ---
+  duration_ms: 0.360029
+  type: 'test'
+  ...
+# Subtest: independent inventory reads actual non-idempotent provider effects without creating an absent database
+ok 50 - independent inventory reads actual non-idempotent provider effects without creating an absent database
+  ---
+  duration_ms: 7.659953
+  type: 'test'
+  ...
+# Subtest: GitHub inventory paginates state=all, excludes PRs and preserves every duplicate marker candidate
+ok 51 - GitHub inventory paginates state=all, excludes PRs and preserves every duplicate marker candidate
+  ---
+  duration_ms: 11.961057
+  type: 'test'
+  ...
+# Subtest: GitHub inventory fails closed on a full scan bound and HTTP access failures
+ok 52 - GitHub inventory fails closed on a full scan bound and HTTP access failures
+  ---
+  duration_ms: 4.889489
+  type: 'test'
+  ...
+# Subtest: auth evidence is an actual remote HTTP 401, with successful control and no inventory changes
+ok 53 - auth evidence is an actual remote HTTP 401, with successful control and no inventory changes
+  ---
+  duration_ms: 1047.535862
   type: 'test'
   ...
 # Subtest: GitHub lookup checks exact marker, creator, destination and excludes pull requests
-ok 46 - GitHub lookup checks exact marker, creator, destination and excludes pull requests
+ok 54 - GitHub lookup checks exact marker, creator, destination and excludes pull requests
   ---
-  duration_ms: 5.542642
+  duration_ms: 5.622797
   type: 'test'
   ...
 # Subtest: GitHub ambiguous duplicate matches block adoption
-ok 47 - GitHub ambiguous duplicate matches block adoption
+ok 55 - GitHub ambiguous duplicate matches block adoption
   ---
-  duration_ms: 0.685769
+  duration_ms: 0.876319
   type: 'test'
   ...
 # Subtest: GitHub pagination scans later pages and includes closed records via state=all
-ok 48 - GitHub pagination scans later pages and includes closed records via state=all
+ok 56 - GitHub pagination scans later pages and includes closed records via state=all
   ---
-  duration_ms: 2.628094
+  duration_ms: 2.707511
   type: 'test'
   ...
 # Subtest: GitHub truncated pagination cannot falsely certify one candidate
-ok 49 - GitHub truncated pagination cannot falsely certify one candidate
+ok 57 - GitHub truncated pagination cannot falsely certify one candidate
   ---
-  duration_ms: 12.63458
+  duration_ms: 9.265854
   type: 'test'
   ...
 # Subtest: GitHub creation appends an operation marker and never silently retries requests
-ok 50 - GitHub creation appends an operation marker and never silently retries requests
+ok 58 - GitHub creation appends an operation marker and never silently retries requests
   ---
-  duration_ms: 0.747903
+  duration_ms: 0.618059
   type: 'test'
   ...
 # Subtest: GitHub HTTP errors and malformed responses cannot masquerade as absence
-ok 51 - GitHub HTTP errors and malformed responses cannot masquerade as absence
+ok 59 - GitHub HTTP errors and malformed responses cannot masquerade as absence
   ---
-  duration_ms: 1.321473
+  duration_ms: 1.314503
   type: 'test'
   ...
 # Subtest: GitHub marker substring is not an exact operation marker match
-ok 52 - GitHub marker substring is not an exact operation marker match
+ok 60 - GitHub marker substring is not an exact operation marker match
   ---
-  duration_ms: 0.557875
+  duration_ms: 0.426868
   type: 'test'
   ...
 # Subtest: HTTP MCP transport accepts the bearer credential and rejects unauthorized tool calls
-ok 53 - HTTP MCP transport accepts the bearer credential and rejects unauthorized tool calls
+ok 61 - HTTP MCP transport accepts the bearer credential and rejects unauthorized tool calls
   ---
-  duration_ms: 1123.424797
+  duration_ms: 1099.705793
   type: 'test'
   ...
 # Subtest: actual NitroStack MCP server discovers two downstream services and runs end to end
-ok 54 - actual NitroStack MCP server discovers two downstream services and runs end to end
+ok 62 - actual NitroStack MCP server discovers two downstream services and runs end to end
   ---
-  duration_ms: 1302.066647
+  duration_ms: 1308.431108
   type: 'test'
   ...
 # Subtest: real MCP timeout after commit recovers after gateway process recreation
-ok 55 - real MCP timeout after commit recovers after gateway process recreation
+ok 63 - real MCP timeout after commit recovers after gateway process recreation
   ---
-  duration_ms: 2721.343735
+  duration_ms: 2767.90904
   type: 'test'
   ...
 # Subtest: real MCP hidden read stays paused through repeated recoveries
-ok 56 - real MCP hidden read stays paused through repeated recoveries
+ok 64 - real MCP hidden read stays paused through repeated recoveries
   ---
-  duration_ms: 1290.922487
+  duration_ms: 1333.500222
   type: 'test'
   ...
 # Subtest: real MCP unavailable evidence cannot complete the workflow
-ok 57 - real MCP unavailable evidence cannot complete the workflow
+ok 65 - real MCP unavailable evidence cannot complete the workflow
   ---
-  duration_ms: 1593.805802
+  duration_ms: 1751.690326
   type: 'test'
   ...
 # Subtest: real MCP duplicate evidence cannot complete the workflow
-ok 58 - real MCP duplicate evidence cannot complete the workflow
+ok 66 - real MCP duplicate evidence cannot complete the workflow
   ---
-  duration_ms: 1618.946169
+  duration_ms: 1610.489355
   type: 'test'
   ...
 # Subtest: real MCP wrong_target evidence cannot complete the workflow
-ok 59 - real MCP wrong_target evidence cannot complete the workflow
+ok 67 - real MCP wrong_target evidence cannot complete the workflow
   ---
-  duration_ms: 1794.343716
+  duration_ms: 1738.039279
   type: 'test'
   ...
 # Subtest: real MCP malformed evidence cannot complete the workflow
-ok 60 - real MCP malformed evidence cannot complete the workflow
+ok 68 - real MCP malformed evidence cannot complete the workflow
   ---
-  duration_ms: 1793.020339
+  duration_ms: 1721.991698
   type: 'test'
   ...
 # Subtest: unauthorized calls and attempted workspace spoofing are rejected
-ok 61 - unauthorized calls and attempted workspace spoofing are rejected
+ok 69 - unauthorized calls and attempted workspace spoofing are rejected
   ---
-  duration_ms: 1015.741742
+  duration_ms: 1055.176073
   type: 'test'
   ...
 # Subtest: wire input validation rejects unknown keys, oversized content and invalid request identifiers
-ok 62 - wire input validation rejects unknown keys, oversized content and invalid request identifiers
+ok 70 - wire input validation rejects unknown keys, oversized content and invalid request identifiers
   ---
-  duration_ms: 693.167023
+  duration_ms: 621.874018
   type: 'test'
   ...
 # Subtest: abrupt process kill after an ambiguous outcome still permits read-only reconciliation
-ok 63 - abrupt process kill after an ambiguous outcome still permits read-only reconciliation
+ok 71 - abrupt process kill after an ambiguous outcome still permits read-only reconciliation
   ---
-  duration_ms: 2488.850998
+  duration_ms: 2729.335898
   type: 'test'
   ...
 # Subtest: invalid and error MCP responses are not trusted
-ok 64 - invalid and error MCP responses are not trusted
+ok 72 - invalid and error MCP responses are not trusted
   ---
-  duration_ms: 0.733069
+  duration_ms: 0.66706
   type: 'test'
   ...
 # Subtest: two gateway OS processes sharing one ledger dispatch each operation once
-ok 65 - two gateway OS processes sharing one ledger dispatch each operation once
+ok 73 - two gateway OS processes sharing one ledger dispatch each operation once
   ---
-  duration_ms: 2051.446826
+  duration_ms: 2084.089092
   type: 'test'
   ...
 # Subtest: SIGKILL between external commit and timeout leaves in_flight intent recoverable
-ok 66 - SIGKILL between external commit and timeout leaves in_flight intent recoverable
+ok 74 - SIGKILL between external commit and timeout leaves in_flight intent recoverable
   ---
-  duration_ms: 1955.700405
+  duration_ms: 2073.924613
   type: 'test'
   ...
 # Subtest: SQLite startup waits for a competing lock before switching journal mode
-ok 67 - SQLite startup waits for a competing lock before switching journal mode
+ok 75 - SQLite startup waits for a competing lock before switching journal mode
   ---
-  duration_ms: 862.778862
+  duration_ms: 876.597773
   type: 'test'
   ...
-1..67
-# tests 67
+1..75
+# tests 75
 # suites 0
-# pass 67
+# pass 75
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 36527.375999
+# duration_ms 35211.46814

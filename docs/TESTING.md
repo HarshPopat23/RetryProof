@@ -5,10 +5,13 @@
 ```bash
 npm ci
 npm run verify
+npm run experiments:local
 npm run test:coverage
 ```
 
 `verify` runs build, the full test suite, and the executed comparison demo. It writes `evidence/verification.json`, `evidence/test-results.tap`, and `evidence/demo-results.json`. An exit code other than zero means the package is not ready. `test:coverage` is optional and reports local process coverage; a percentage is not a proof of correctness or a production success rate.
+
+`experiments:local` independently saves full provider inventories, explicit wrong-token HTTP status, replay receipts, a SIGKILL supplement and controlled agent rejection fixtures. It does not require or use live credentials. CI executes this command after verification and uploads its outputs. See [Experiment guide](EXPERIMENTS.md) for per-experiment assertions, live opt-in and evidence boundaries.
 
 ## Test layers
 

@@ -1,0 +1,113 @@
+{
+  "before": {
+    "captured_at": "2026-10-17T08:37:09.153Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+      }
+    ]
+  },
+  "after_hidden_recoveries": {
+    "captured_at": "2026-10-17T08:37:09.497Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+      },
+      {
+        "id": "90067d88-c189-4fd7-a2dc-00fb00a346bd",
+        "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/90067d88-c189-4fd7-a2dc-00fb00a346bd"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+      }
+    ]
+  },
+  "after_recovery": {
+    "captured_at": "2026-10-17T08:37:09.525Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+      },
+      {
+        "id": "90067d88-c189-4fd7-a2dc-00fb00a346bd",
+        "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/90067d88-c189-4fd7-a2dc-00fb00a346bd"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "252eaf30-68bf-4fdd-a0d8-eaab96c684b7",
+        "marker": "rp_2059de727382cd3f0a3df6cd5c8d5c0f14bfd6223e75c431ba0770f0bbfd3602",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/90067d88-c189-4fd7-a2dc-00fb00a346bd",
+        "sourceId": "90067d88-c189-4fd7-a2dc-00fb00a346bd",
+        "url": "https://sandbox.retryproof.invalid/records/252eaf30-68bf-4fdd-a0d8-eaab96c684b7"
+      },
+      {
+        "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+      }
+    ]
+  }
+}

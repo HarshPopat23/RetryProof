@@ -61,7 +61,7 @@ Use a fresh `RP_DATA_DIR` for an intentionally separate test installation. Keep 
 
 In this mode the issue MCP service calls the real GitHub REST API; the tracking service remains the independent local board. The gateway never calls GitHub directly. Creation appends an exact signed operation marker to the issue body. A human can edit visible text, but removing the marker can prevent recovery. The provider scans up to 1,000 issue/PR records and pauses if the complete verification scan exceeds this bound.
 
-Live account behavior was not tested in the supplied evidence. To verify it yourself, start a new workflow, check the actual issue URL, compare the tracker source ID, restart the gateway with the same data, and replay the same request. Do not present the simulated baseline as a real GitHub outage.
+The original adapter tests use controlled responses. Separate participant-supplied receipts identify live issue handoffs; see the [historical evidence review](../experiments/README.md) for their limits. To collect a fresh live run with independent repository and tracker inventories, follow the [experiment guide](EXPERIMENTS.md). Do not present the simulated baseline as a real GitHub outage or dashboard reconnect as backend restart.
 
 ## 5. Container
 

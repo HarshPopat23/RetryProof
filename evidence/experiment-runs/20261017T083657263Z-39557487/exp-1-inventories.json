@@ -1,0 +1,66 @@
+{
+  "before": {
+    "captured_at": "2026-10-17T08:36:58.341Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [],
+    "tracking": []
+  },
+  "after_start": {
+    "captured_at": "2026-10-17T08:36:58.368Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "d572855a-489e-464e-8455-8ad6503b05cb",
+        "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "79d04403-a205-4b87-909f-492896217f8c",
+        "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+        "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb",
+        "url": "https://sandbox.retryproof.invalid/records/79d04403-a205-4b87-909f-492896217f8c"
+      }
+    ]
+  },
+  "after_three_replays": {
+    "captured_at": "2026-10-17T08:36:58.390Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "d572855a-489e-464e-8455-8ad6503b05cb",
+        "marker": "rp_88096f72e0127423042c5308b7d56f0193c4248fdc42e41e7306ba93cd71436a",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "79d04403-a205-4b87-909f-492896217f8c",
+        "marker": "rp_5efa465dc78c1927dc8f55ded3c47a360e56aa5ea5130671b111747656e415ba",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Handle an empty configuration 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/d572855a-489e-464e-8455-8ad6503b05cb",
+        "sourceId": "d572855a-489e-464e-8455-8ad6503b05cb",
+        "url": "https://sandbox.retryproof.invalid/records/79d04403-a205-4b87-909f-492896217f8c"
+      }
+    ]
+  }
+}

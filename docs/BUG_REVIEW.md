@@ -60,3 +60,18 @@ The final delivery procedure includes a clean archive extraction, dependency ins
 * GitHub live-account writes, n8n UI import/execution, NitroStudio UI use, Docker build and NitroCloud hosting were not performed here.
 
 The package should be described as tested for these explicit cases, never as “bug-free” or universally exactly-once.
+
+## Experiment evidence review (October 2026)
+
+The historical experiment runner had six evidence weaknesses now addressed:
+
+| Finding | Change | Check |
+| --- | --- | --- |
+| `.find()` selected one record without excluding duplicates. | Save complete provider inventories and assert exactly one added issue/tracker, marker multiplicity and unchanged replay IDs. | Inventory oracle regression deliberately supplies a duplicate. |
+| A generic connection failure stood in for authentication evidence. | Direct HTTP initialization probe must receive 401/403; valid-token discovery must then succeed. | Real local authenticated bridge returns 401 with unchanged stores. |
+| Any failed agent HTTP response was labeled safe rejection. | Accept only a known model argument/call rejection plus unchanged inventories; provider errors fail. | Separate controlled outputs exercise modified ID/title, multiple calls and wrong tool. |
+| The supposed multiple-call regression supplied zero calls. | Supply two actual function calls. | Existing agent regression now reaches the multiple-call condition. |
+| Fixed run IDs and published bearer values could contaminate later runs. | Isolated temporary services, unique run IDs, random runtime bearer values and explicit live opt-in. | Repeatable keyless runner and per-run provenance. |
+| Dashboard reconnect was easy to confuse with backend crash recovery. | Label experiment 7 narrowly; save a separate real SIGKILL supplement. | New gateway PID, persisted in-flight state and unchanged committed issue ID. |
+
+Historical JSON receipts remain unchanged. Their summary is annotated rather than backfilled. See [Experiment guide](EXPERIMENTS.md) for the observation boundaries and stricter rerun commands.

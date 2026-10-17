@@ -19,6 +19,14 @@ npm run dashboard
 
 Open **http://127.0.0.1:3400**, choose a setup option and Connect. The UI accepts GitHub, remote MCP and optional LLM credentials through the local backend. [Dashboard setup and replacement guide](docs/UI_SETUP.md).
 
+For a judge-facing experiment run with independent record inventories and actual HTTP authentication evidence:
+
+```bash
+npm run experiments:local
+```
+
+This starts isolated local services, runs six keyless experiments, and labels four live GitHub/model experiments BLOCKED. It also saves separate SIGKILL recovery and controlled agent-rejection evidence. See the [experiment guide](docs/EXPERIMENTS.md) for live configuration, output files and claim limits. The [earlier participant run](experiments/README.md) is preserved with an explicit evidence review.
+
 ```bash
 npm ci
 npm run verify
@@ -87,6 +95,7 @@ This is **not universal exactly-once execution**. A crash after persisting the d
 | [n8n integration](docs/N8N.md) | Importable workflow and MCP Client Tool configuration. |
 | [MCP API](docs/API.md) | Inputs, outputs and client behavior. |
 | [Testing](docs/TESTING.md) | Reproduction commands and evidence limits. |
+| [Experiment guide](docs/EXPERIMENTS.md) | Before/after inventories, actual HTTP 401 evidence, live opt-in and reconnect versus crash recovery. |
 | [Measured results](docs/VALIDATION_RESULTS.md) | Final test counts, coverage, concurrency repetitions and clean-extraction outcome. |
 | [Bug review](docs/BUG_REVIEW.md) | Bugs found, fixes, regression checks and remaining limits. |
 | [Research](docs/RESEARCH.md) | Prior art and why the scope is narrow. |
@@ -96,7 +105,7 @@ This is **not universal exactly-once execution**. A crash after persisting the d
 
 ## Scope and verification boundary
 
-The included evidence reports what was executed locally. GitHub integration is implemented and tested with controlled HTTP responses, but no live GitHub account write is claimed. n8n import/UI execution, NitroStudio UI operation, Docker image construction, and NitroCloud deployment require your environment and are not represented as completed.
+The automated verification/demo and new keyless experiment evidence execute local MCP services; controlled HTTP/model fixtures are labeled as such. The separate participant-supplied historical receipts identify live GitHub issues and Groq agent responses, with the export limitations documented in [the historical review](experiments/README.md). Fresh live experiments require your explicit configuration and `npm run experiments:live`. Dashboard reconnect, graceful gateway recreation and SIGKILL recovery are separate checks. n8n UI operation, NitroStudio UI operation, Docker image construction and cloud deployment are not represented as completed.
 
 A specific, supported workflow is the deliverable. Arbitrary MCP proxies, automatic rollback, payments, multi-tenant SaaS, and new MCP protocol extensions are outside this version.
 

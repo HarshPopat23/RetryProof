@@ -117,7 +117,8 @@ test('agent rejects changed task identity and multiple calls before any MCP muta
   const config={provider:'openai',model:'test',apiKey:'never-return-this-key'};
   const bad=async()=>Response.json({choices:[{message:{tool_calls:[{type:'function',function:{name:'rp_start_workflow',arguments:JSON.stringify({...task,request_id:'different-task'})}}]}}]});
   await assert.rejects(runAgent(gateway,config,task,'start',bad),/changed/);assert.equal(mutations,0);
-  const multiple=async()=>Response.json({choices:[{message:{tool_calls:[]}}]});
+  const call={type:'function',function:{name:'rp_start_workflow',arguments:JSON.stringify(task)}};
+  const multiple=async()=>Response.json({choices:[{message:{tool_calls:[call,call]}}]});
   await assert.rejects(runAgent(gateway,config,task,'start',multiple),/single permitted/);assert.equal(mutations,0);
 });
 test('disconnect releases the profile while reconnecting the same workspace preserves the ledger', async t => {
