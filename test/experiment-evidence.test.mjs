@@ -48,9 +48,10 @@ test('agent result A requires literal approved content, not just a completed rec
   assert.throws(() => assertAgentOutcome(result, approved, before, after));
 });
 test('independent inventory reads actual non-idempotent provider effects without creating an absent database', async t => {
-  const dir = mkdtempSync(join(tmpdir(), 'retryproof-inventory-')); t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const dir = mkdtempSync(join(tmpdir(), 'retryproof-inventory-'));
   const path = join(dir, 'effects.sqlite'); assert.deepEqual(readEffects(path), []); assert.equal(existsSync(path), false);
-  const provider = new LabProvider(path, 'sandbox:issues'); t.after(() => provider.close());
+  const provider = new LabProvider(path, 'sandbox:issues');
+  t.after(() => { provider.close(); rmSync(dir, { recursive: true, force: true }); });
   await provider.create(issue.marker, { title: 'Same task', body: '', sourceId: '' });
   await provider.create(issue.marker, { title: 'Same task', body: '', sourceId: '' });
   assert.equal(readEffects(path).length, 2);

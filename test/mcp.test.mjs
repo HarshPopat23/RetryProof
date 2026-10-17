@@ -88,13 +88,17 @@ test('invalid and error MCP responses are not trusted', () => {
   assert.throws(() => unpack({ content: [] }));
 });
 test('two gateway OS processes sharing one ledger dispatch each operation once', async t => {
-  const f = await setup(t), other = await gateway(f.dir); t.after(() => other.close());
-  await Promise.all([f.g.call('rp_start_workflow', { request_id: 'process-race', title: 'Title', body: '' }),
-    other.call('rp_start_workflow', { request_id: 'process-race', title: 'Title', body: '' })]);
-  const recovered = await f.g.call('rp_resume_workflow', { request_id: 'process-race' });
-  assert.equal(recovered.status, 'completed', JSON.stringify(recovered, null, 2));
-  assert.equal((await f.issue.call('lab_list_records', {})).records.length, 1);
-  assert.equal((await f.tracking.call('lab_list_records', {})).records.length, 1);
+  const f = await setup(t), other = await gateway(f.dir);
+  try {
+    await Promise.all([f.g.call('rp_start_workflow', { request_id: 'process-race', title: 'Title', body: '' }),
+      other.call('rp_start_workflow', { request_id: 'process-race', title: 'Title', body: '' })]);
+    const recovered = await f.g.call('rp_resume_workflow', { request_id: 'process-race' });
+    assert.equal(recovered.status, 'completed', JSON.stringify(recovered, null, 2));
+    assert.equal((await f.issue.call('lab_list_records', {})).records.length, 1);
+    assert.equal((await f.tracking.call('lab_list_records', {})).records.length, 1);
+  } finally {
+    await other.close();
+  }
 });
 test('SIGKILL between external commit and timeout leaves in_flight intent recoverable', async t => {
   const f = await setup(t, { RP_TIMEOUT_MS: '5000' });

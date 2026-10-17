@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { createHmac } from 'node:crypto';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { DatabaseSync } from 'node:sqlite';
+import { DatabaseSync } from '../dist/core/db.js';
 
 // Read the domain services' effect stores, never the gateway operation ledger.
 // Absent databases mean no effects have yet been persisted in this fresh profile.
