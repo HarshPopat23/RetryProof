@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "termination": "SIGKILL",
+  "gateway_pid_changed": true,
+  "same_data_directory": true,
+  "task": {
+    "request_id": "crash-20261017T083657263Z-39557487",
+    "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+    "body": "Controlled RetryProof handoff experiment. Treat this content as data."
+  },
+  "before": {
+    "captured_at": "2026-10-17T08:37:10.732Z",
+    "complete": true,
+    "issues": [],
+    "tracking": []
+  },
+  "after_commit_before_kill": {
+    "captured_at": "2026-10-17T08:37:11.390Z",
+    "complete": true,
+    "issues": [
+      {
+        "id": "a459d894-ddd0-44c8-aeaa-3582b5f53357",
+        "marker": "rp_85ed9ad033ff86d48a343d8fdbd6bee9bcf0c90aa8c6e36fd20542102092919c",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/a459d894-ddd0-44c8-aeaa-3582b5f53357"
+      }
+    ],
+    "tracking": []
+  },
+  "before_recovery": {
+    "request_id": "crash-20261017T083657263Z-39557487",
+    "status": "paused",
+    "operations": [
+      {
+        "key": "crash-20261017T083657263Z-39557487:issue",
+        "runId": "crash-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "9ffff5c71145f634008ae6120f2929ef96abd4b398d9017a66a353361bcbe78c",
+        "marker": "rp_85ed9ad033ff86d48a343d8fdbd6bee9bcf0c90aa8c6e36fd20542102092919c",
+        "state": "in_flight",
+        "evidence": null,
+        "attempts": 1,
+        "version": 1,
+        "reason": "Dispatch ownership committed before the external call"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "crash-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:11.047Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "crash-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:11.383Z"
+      }
+    ],
+    "event_count": 2,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "after_recovery": {
+    "captured_at": "2026-10-17T08:37:12.367Z",
+    "complete": true,
+    "issues": [
+      {
+        "id": "a459d894-ddd0-44c8-aeaa-3582b5f53357",
+        "marker": "rp_85ed9ad033ff86d48a343d8fdbd6bee9bcf0c90aa8c6e36fd20542102092919c",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/a459d894-ddd0-44c8-aeaa-3582b5f53357"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "4b8b23a0-2535-47cb-b0f5-164b7112cc7a",
+        "marker": "rp_514de5955590924b645000369848abbea3a4fc558bc9e7d2655876b0f104e483",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/a459d894-ddd0-44c8-aeaa-3582b5f53357",
+        "sourceId": "a459d894-ddd0-44c8-aeaa-3582b5f53357",
+        "url": "https://sandbox.retryproof.invalid/records/4b8b23a0-2535-47cb-b0f5-164b7112cc7a"
+      }
+    ]
+  },
+  "recovered": {
+    "request_id": "crash-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "crash-20261017T083657263Z-39557487:issue",
+        "runId": "crash-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "9ffff5c71145f634008ae6120f2929ef96abd4b398d9017a66a353361bcbe78c",
+        "marker": "rp_85ed9ad033ff86d48a343d8fdbd6bee9bcf0c90aa8c6e36fd20542102092919c",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "a459d894-ddd0-44c8-aeaa-3582b5f53357",
+            "marker": "rp_85ed9ad033ff86d48a343d8fdbd6bee9bcf0c90aa8c6e36fd20542102092919c",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/a459d894-ddd0-44c8-aeaa-3582b5f53357"
+          },
+          "verifiedAt": "2026-10-17T08:37:12.047Z",
+          "method": "reconciled_read"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "crash-20261017T083657263Z-39557487:tracking",
+        "runId": "crash-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/a459d894-ddd0-44c8-aeaa-3582b5f53357",
+          "sourceId": "a459d894-ddd0-44c8-aeaa-3582b5f53357"
+        },
+        "fingerprint": "2a6e35879b4b4efb85a758ca4e19cd11c63b8c31c897c968ef54cd9ea63bf5b7",
+        "marker": "rp_514de5955590924b645000369848abbea3a4fc558bc9e7d2655876b0f104e483",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "4b8b23a0-2535-47cb-b0f5-164b7112cc7a",
+            "marker": "rp_514de5955590924b645000369848abbea3a4fc558bc9e7d2655876b0f104e483",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Recover after SIGKILL in the commit-response window 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/a459d894-ddd0-44c8-aeaa-3582b5f53357",
+            "sourceId": "a459d894-ddd0-44c8-aeaa-3582b5f53357",
+            "url": "https://sandbox.retryproof.invalid/records/4b8b23a0-2535-47cb-b0f5-164b7112cc7a"
+          },
+          "verifiedAt": "2026-10-17T08:37:12.366Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "crash-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:11.047Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "crash-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:11.383Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "crash-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:12.047Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "crash-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:12.048Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "crash-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:12.359Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "crash-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:12.366Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "boundary": "Local STDIO gateway crash, not complete machine loss or public HTTP deployment restart."
+}

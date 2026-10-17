@@ -97,4 +97,4 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-`RP_BROWSER_EXECUTABLE` can point to an existing compatible Chromium binary for the browser check. Browser tests use controlled GitHub read/model responses, while sandbox actions and remote forwarding use real MCP processes. Paid model calls and live GitHub writes have not been performed in the delivered evidence.
+`RP_BROWSER_EXECUTABLE` can point to an existing compatible Chromium binary for the browser check. Browser tests use controlled GitHub read/model responses, while sandbox actions and remote forwarding use real MCP processes. Those browser checks do not perform paid model calls or live GitHub writes. Participant-supplied integration receipts and the stricter optional live runner are documented separately in the [experiment guide](EXPERIMENTS.md).

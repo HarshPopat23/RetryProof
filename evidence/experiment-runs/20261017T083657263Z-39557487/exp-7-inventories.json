@@ -1,0 +1,66 @@
+{
+  "before": {
+    "captured_at": "2026-10-17T08:37:10.290Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [],
+    "tracking": []
+  },
+  "after_start": {
+    "captured_at": "2026-10-17T08:37:10.317Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+        "marker": "rp_cf3881983f792edeba085e50c5f8804c34bffbe9d47d2651555c6d65687a76f9",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "4df39acd-9d2d-475b-9b97-a0514a4f4764",
+        "marker": "rp_e2090e5f50ac36c4f97f08ddc727c857a3aaeb19e20785008c6505122e97f647",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166",
+        "sourceId": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+        "url": "https://sandbox.retryproof.invalid/records/4df39acd-9d2d-475b-9b97-a0514a4f4764"
+      }
+    ]
+  },
+  "after_dashboard_reconnect": {
+    "captured_at": "2026-10-17T08:37:10.350Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+        "marker": "rp_cf3881983f792edeba085e50c5f8804c34bffbe9d47d2651555c6d65687a76f9",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "4df39acd-9d2d-475b-9b97-a0514a4f4764",
+        "marker": "rp_e2090e5f50ac36c4f97f08ddc727c857a3aaeb19e20785008c6505122e97f647",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Keep the remote task after dashboard reconnect 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/28065a97-2a18-4acb-aa47-fbbc635b3166",
+        "sourceId": "28065a97-2a18-4acb-aa47-fbbc635b3166",
+        "url": "https://sandbox.retryproof.invalid/records/4df39acd-9d2d-475b-9b97-a0514a4f4764"
+      }
+    ]
+  }
+}

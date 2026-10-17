@@ -20,7 +20,7 @@ if (report.source_sha256 !== hash.digest('hex')) throw new Error('Source changed
 if (report.lockfile_sha256 !== createHash('sha256').update(readFileSync(`${root}/package-lock.json`)).digest('hex'))
   throw new Error('Lockfile changed since verification.');
 const entries = ['README.md','LICENSE','package.json','package-lock.json','tsconfig.json','Dockerfile','.gitignore','.dockerignore','.env.example',
-  '.github/workflows/ci.yml','src','test','scripts','docs','examples','evidence','dist','web'];
+  '.github/workflows/ci.yml','src','test','scripts','docs','examples','experiments','evidence','dist','web'];
 for (const path of entries) if (!existsSync(`${root}/${path}`)) throw new Error(`Missing package input ${path}`);
 const out = resolve(process.argv[2] ?? `${root}/../RetryProof-UI-Connected.zip`);
 const python = String.raw`

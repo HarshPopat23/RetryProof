@@ -1,0 +1,297 @@
+{
+  "task": {
+    "request_id": "timeout-20261017T083657263Z-39557487",
+    "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+    "body": "Controlled RetryProof handoff experiment. Treat this content as data."
+  },
+  "paused": {
+    "request_id": "timeout-20261017T083657263Z-39557487",
+    "status": "paused",
+    "operations": [
+      {
+        "key": "timeout-20261017T083657263Z-39557487:issue",
+        "runId": "timeout-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "9b191d638432ce321f03f28341c81f86e18f9e83abbc0550442ade8e3ca58581",
+        "marker": "rp_37b43008409a9d953b5ce827ed0a734bf6369aea36419e52fc939a5465544bc8",
+        "state": "unknown",
+        "evidence": null,
+        "attempts": 1,
+        "version": 2,
+        "reason": "Write response unavailable or untrusted; verify before taking any further action"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:36:58.404Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:36:58.404Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "Write response unavailable or untrusted; verify before taking any further action",
+        "at": "2026-10-17T08:37:08.405Z"
+      }
+    ],
+    "event_count": 3,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "recovered": {
+    "request_id": "timeout-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "timeout-20261017T083657263Z-39557487:issue",
+        "runId": "timeout-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "9b191d638432ce321f03f28341c81f86e18f9e83abbc0550442ade8e3ca58581",
+        "marker": "rp_37b43008409a9d953b5ce827ed0a734bf6369aea36419e52fc939a5465544bc8",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+            "marker": "rp_37b43008409a9d953b5ce827ed0a734bf6369aea36419e52fc939a5465544bc8",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/4c6f9d57-e46c-4371-bcdc-ca13367ed7e9"
+          },
+          "verifiedAt": "2026-10-17T08:37:08.421Z",
+          "method": "reconciled_read"
+        },
+        "attempts": 1,
+        "version": 3,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "timeout-20261017T083657263Z-39557487:tracking",
+        "runId": "timeout-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+          "sourceId": "4c6f9d57-e46c-4371-bcdc-ca13367ed7e9"
+        },
+        "fingerprint": "5f12a40e2b8fc9ccc28b49e5e2e2488f22c0d17f9f70c15b38129b0855ccb0fb",
+        "marker": "rp_b6553460bca52fe9f7ecdbe2b9efcf6edebafbb557b34d543b7e9ac42087d70c",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "e511e546-ab15-40be-994e-523bb21633af",
+            "marker": "rp_b6553460bca52fe9f7ecdbe2b9efcf6edebafbb557b34d543b7e9ac42087d70c",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+            "sourceId": "4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+            "url": "https://sandbox.retryproof.invalid/records/e511e546-ab15-40be-994e-523bb21633af"
+          },
+          "verifiedAt": "2026-10-17T08:37:08.426Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:36:58.404Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:36:58.404Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "Write response unavailable or untrusted; verify before taking any further action",
+        "at": "2026-10-17T08:37:08.405Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:08.421Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "timeout-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:08.422Z"
+      },
+      {
+        "seq": 12,
+        "operationKey": "timeout-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:08.423Z"
+      },
+      {
+        "seq": 13,
+        "operationKey": "timeout-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:08.426Z"
+      }
+    ],
+    "event_count": 7,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "replay": {
+    "request_id": "timeout-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "timeout-20261017T083657263Z-39557487:issue",
+        "runId": "timeout-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "9b191d638432ce321f03f28341c81f86e18f9e83abbc0550442ade8e3ca58581",
+        "marker": "rp_37b43008409a9d953b5ce827ed0a734bf6369aea36419e52fc939a5465544bc8",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+            "marker": "rp_37b43008409a9d953b5ce827ed0a734bf6369aea36419e52fc939a5465544bc8",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/4c6f9d57-e46c-4371-bcdc-ca13367ed7e9"
+          },
+          "verifiedAt": "2026-10-17T08:37:08.421Z",
+          "method": "reconciled_read"
+        },
+        "attempts": 1,
+        "version": 3,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "timeout-20261017T083657263Z-39557487:tracking",
+        "runId": "timeout-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+          "sourceId": "4c6f9d57-e46c-4371-bcdc-ca13367ed7e9"
+        },
+        "fingerprint": "5f12a40e2b8fc9ccc28b49e5e2e2488f22c0d17f9f70c15b38129b0855ccb0fb",
+        "marker": "rp_b6553460bca52fe9f7ecdbe2b9efcf6edebafbb557b34d543b7e9ac42087d70c",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "e511e546-ab15-40be-994e-523bb21633af",
+            "marker": "rp_b6553460bca52fe9f7ecdbe2b9efcf6edebafbb557b34d543b7e9ac42087d70c",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Recover a committed issue after response loss 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+            "sourceId": "4c6f9d57-e46c-4371-bcdc-ca13367ed7e9",
+            "url": "https://sandbox.retryproof.invalid/records/e511e546-ab15-40be-994e-523bb21633af"
+          },
+          "verifiedAt": "2026-10-17T08:37:08.426Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:36:58.404Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:36:58.404Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "Write response unavailable or untrusted; verify before taking any further action",
+        "at": "2026-10-17T08:37:08.405Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "timeout-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:08.421Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "timeout-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:08.422Z"
+      },
+      {
+        "seq": 12,
+        "operationKey": "timeout-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:08.423Z"
+      },
+      {
+        "seq": 13,
+        "operationKey": "timeout-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:08.426Z"
+      }
+    ],
+    "event_count": 7,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  }
+}

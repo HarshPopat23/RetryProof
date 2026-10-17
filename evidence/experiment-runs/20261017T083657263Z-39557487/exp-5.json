@@ -1,0 +1,355 @@
+{
+  "task": {
+    "request_id": "client-20261017T083657263Z-39557487",
+    "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+    "body": "Controlled RetryProof handoff experiment. Treat this content as data."
+  },
+  "capabilities": {
+    "mode": "sandbox",
+    "issueTarget": "sandbox:issues",
+    "trackerTarget": "local:release-board",
+    "services": [
+      {
+        "service": "issue",
+        "tools": [
+          {
+            "name": "issue_create",
+            "description": "Create a issue record in the configured destination. Non-idempotent; do not retry an ambiguous result.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string",
+                  "pattern": "^rp_[a-f0-9]{64}$"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "body": {
+                  "type": "string",
+                  "maxLength": 10000
+                },
+                "sourceId": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              },
+              "required": [
+                "marker",
+                "title",
+                "body",
+                "sourceId"
+              ],
+              "additionalProperties": true,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            }
+          },
+          {
+            "name": "issue_find",
+            "description": "Read issue records by exact operation marker. Missing results do not authorize a retry.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string",
+                  "pattern": "^rp_[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "marker"
+              ],
+              "additionalProperties": true,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            }
+          }
+        ]
+      },
+      {
+        "service": "tracking",
+        "tools": [
+          {
+            "name": "tracking_create",
+            "description": "Create a tracking record in the configured destination. Non-idempotent; do not retry an ambiguous result.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string",
+                  "pattern": "^rp_[a-f0-9]{64}$"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                },
+                "body": {
+                  "type": "string",
+                  "maxLength": 10000
+                },
+                "sourceId": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              },
+              "required": [
+                "marker",
+                "title",
+                "body",
+                "sourceId"
+              ],
+              "additionalProperties": true,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            }
+          },
+          {
+            "name": "tracking_find",
+            "description": "Read tracking records by exact operation marker. Missing results do not authorize a retry.",
+            "inputSchema": {
+              "type": "object",
+              "properties": {
+                "marker": {
+                  "type": "string",
+                  "pattern": "^rp_[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "marker"
+              ],
+              "additionalProperties": true,
+              "$schema": "http://json-schema.org/draft-07/schema#"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "client_receipt": {
+    "request_id": "client-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "client-20261017T083657263Z-39557487:issue",
+        "runId": "client-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "b91e99084b74128f4345e31da515047df8a494fd4627163af2054645c93b4f93",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+            "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+          },
+          "verifiedAt": "2026-10-17T08:37:09.131Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "client-20261017T083657263Z-39557487:tracking",
+        "runId": "client-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+          "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+        },
+        "fingerprint": "b73ccd36f3ecb270439243e7f80796f5b89618f4d55b43bd008ebcfc700b1e32",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+            "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+            "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+            "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+          },
+          "verifiedAt": "2026-10-17T08:37:09.137Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "client-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.123Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "client-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.124Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "client-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:09.131Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "client-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.131Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "client-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.132Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "client-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:09.137Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "dashboard_receipt": {
+    "request_id": "client-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "client-20261017T083657263Z-39557487:issue",
+        "runId": "client-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "b91e99084b74128f4345e31da515047df8a494fd4627163af2054645c93b4f93",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+            "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+          },
+          "verifiedAt": "2026-10-17T08:37:09.131Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "client-20261017T083657263Z-39557487:tracking",
+        "runId": "client-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+          "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+        },
+        "fingerprint": "b73ccd36f3ecb270439243e7f80796f5b89618f4d55b43bd008ebcfc700b1e32",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+            "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+            "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+            "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+          },
+          "verifiedAt": "2026-10-17T08:37:09.137Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 1,
+        "operationKey": "client-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.123Z"
+      },
+      {
+        "seq": 2,
+        "operationKey": "client-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.124Z"
+      },
+      {
+        "seq": 3,
+        "operationKey": "client-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:09.131Z"
+      },
+      {
+        "seq": 4,
+        "operationKey": "client-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.131Z"
+      },
+      {
+        "seq": 5,
+        "operationKey": "client-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.132Z"
+      },
+      {
+        "seq": 6,
+        "operationKey": "client-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:09.137Z"
+      }
+    ],
+    "event_count": 6,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "client_type": "Official MCP SDK; no NitroStudio UI executed"
+}

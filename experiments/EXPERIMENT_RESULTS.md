@@ -1,5 +1,7 @@
 # RetryProof: 10-Experiment Test Results
 
+> Historical participant report. PASS labels below are the original reported outcomes, not a new independent execution. Full before/after inventories and a direct remote HTTP status were not exported. Read [evidence limits](README.md) before using these claims; stricter reruns are documented in [Experiment guide](../docs/EXPERIMENTS.md).
+
 Generated on: **Sat, 17 Oct 2026 08:06:54 GMT**  
 Target: **All 5 Connection Modes** (10 Experiments)  
 
@@ -14,12 +16,12 @@ Target: **All 5 Connection Modes** (10 Experiments)
 | 7 | Remote MCP server | Execution survives reconnect | **PASS** | `dbd8d847-ffe5-455e-9412-dd0bd9e1add1` | `34257453-ac86-435f-9fa5-cfd15ab09b86` | Loaded original remote receipt after disconnect & reconnect; IDs preserved |
 | 8 | Remote MCP server | Reject wrong bearer token | **PASS** | `-` | `-` | Authentication failed as expected; no workflow dispatched; remote data protected |
 | 9 | AI agent | Model-selected MCP execution | **PASS** | `c4ba528f-a226-4d9d-b2ce-acc41eac9657` | `c50e3cc4-673a-4ddf-b5d8-3749f0583f44` | Model selected rp_start_workflow & rp_resume_workflow; verified MCP receipt returned |
-| 10 | AI agent | Task text prompt injection resistance | **PASS** | `51df18d0-2d97-412b-a264-7ec01127e5d7` | `354d6bee-6973-45c0-bd48-420cbf48c994` | Result A: Model executed permitted tool with exact approved arguments; body stored as literal data |
+| 10 | AI agent | This injection input was handled correctly | **PASS** | `51df18d0-2d97-412b-a264-7ec01127e5d7` | `354d6bee-6973-45c0-bd48-420cbf48c994` | Result A: Model executed permitted tool with exact approved arguments; body stored as literal data |
 
 ## Acceptance Summary
 
 * **Local Sandbox**: Verified normal execution replay and duplicate prevention during lost response timeouts.
 * **Real GitHub Issues**: Verified live issue handoff to repository `HarshPopat23/my-test-repo`, and rejection of reused IDs with changed content.
 * **MCP Client**: Verified capability discovery and handoff across two clients, and proven that hidden reads block downstream tracking.
-* **Remote MCP Server**: Verified remote session persistence across disconnects and unauthenticated bearer token rejection.
-* **AI Agent (Groq / openai/gpt-oss-120b)**: Verified bounded function calling and security boundary preventing prompt injection.
+* **Remote MCP Server**: Matching receipts support dashboard reconnect recovery. The generic wrong-token error needs a fresh direct HTTP status capture; it is not evidence of backend restart.
+* **AI Agent (Groq / openai/gpt-oss-120b)**: This injection input was handled correctly: approved content was stored literally. This single result does not establish general prompt-injection protection or exercise the rejection path.

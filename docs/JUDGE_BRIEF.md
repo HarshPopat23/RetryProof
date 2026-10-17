@@ -35,4 +35,8 @@ MCP proxies, idempotency and evidence-based recovery already have prior art [S04
 
 ## Evidence boundary
 
-Local sandbox MCP execution and controlled HTTP adapter tests were run. No production incident rate, LLM success rate or latency improvement is claimed. Real GitHub account writes, n8n UI import/run, NitroStudio UI operation, Docker construction and NitroCloud deployment were not executed in this environment. Their setup paths are documented so a participant can complete and verify them before submission.
+Use the [experiment guide](EXPERIMENTS.md) as the review entry point. Fresh keyless runs save independent provider inventories and require an actual remote HTTP 401/403 plus a successful authenticated control. They distinguish dashboard reconnect (experiment 7), a separate gateway SIGKILL and controlled model-output rejection checks.
+
+The [historical participant receipts](../experiments/README.md) identify live GitHub issues and Groq responses. Their reported 10 PASS results have narrower evidence than the original summary suggested: no full inventory history, no raw authentication status and one injection input handled literally. They are retained as supplied, not silently treated as new runs.
+
+No production incident rate, general injection protection, LLM success rate or latency improvement is claimed. n8n UI import/run, NitroStudio UI operation, Docker construction and cloud deployment are not represented as completed. The local crash supplement is not complete host-loss or cloud-replica recovery.

@@ -1,0 +1,66 @@
+{
+  "before": {
+    "captured_at": "2026-10-17T08:37:09.118Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [],
+    "tracking": []
+  },
+  "after_client_start": {
+    "captured_at": "2026-10-17T08:37:09.140Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+      }
+    ]
+  },
+  "after_dashboard_recovery": {
+    "captured_at": "2026-10-17T08:37:09.152Z",
+    "complete": true,
+    "issue_source": "issue provider SQLite effects table (read-only)",
+    "tracking_source": "tracking provider SQLite effects table (read-only)",
+    "issues": [
+      {
+        "id": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "marker": "rp_af7b6487e5771a5ca8739c647fb1485e32dc2f25bb76958c79c2a61b7a81c135",
+        "target": "sandbox:issues",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+        "sourceId": "",
+        "url": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7"
+      }
+    ],
+    "tracking": [
+      {
+        "id": "e30c45d0-b448-4942-8585-f28db2dcd9dc",
+        "marker": "rp_12cb0422266c42a9cd69246432b9b02717daeb5f0eee5a65a35761424106fd25",
+        "target": "local:release-board",
+        "title": "[RetryProof Experiment] Share one task across clients 20261017T083657263Z-39557487",
+        "body": "https://sandbox.retryproof.invalid/records/7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "sourceId": "7b53aceb-57fc-4c7f-bd4e-4561e34f06d7",
+        "url": "https://sandbox.retryproof.invalid/records/e30c45d0-b448-4942-8585-f28db2dcd9dc"
+      }
+    ]
+  }
+}

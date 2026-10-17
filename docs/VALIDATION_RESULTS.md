@@ -1,6 +1,23 @@
-# Delivered validation results
+# Validation history and current evidence
 
-These results were measured on **Node.js v24.19.0, Linux**, during the final delivery checks. The raw evidence files are included; this page is a reading aid rather than a substitute for them.
+## Evidence review verification (2026-10-17)
+
+The evidence-review changes were checked separately from the original delivery measurements below:
+
+| Check | Current observed result | Evidence |
+| --- | --- | --- |
+| Strict build, automated suite and comparison demo | Passed; **75 tests passed, 0 failed, 0 skipped**. | `evidence/verification.json`, `evidence/test-results.tap`, `evidence/demo-results.json` |
+| Fresh keyless experiment run | **6 PASS, 0 FAIL, 4 BLOCKED**. Live GitHub/model steps were not executed in this review. | [Run summary](../evidence/experiment-runs/20261017T083657263Z-39557487/EXPERIMENT_RESULTS.md) |
+| Independent provider inventories | Before/after execution and replay snapshots saved for all six applicable experiments. | `exp-N-inventories.json` in the same run folder |
+| Remote authentication | Actual HTTP **401**, known unauthorized body, successful valid-token discovery and unchanged provider inventories. | `exp-8.json` in the run folder |
+| Actual gateway crash | SIGKILL in the commit-response window; a new gateway PID recovered saved in-flight intent with the same issue ID. | `supplement-gateway-crash.json` in the run folder |
+| Controlled agent rejection | Four bad outputs rejected; **0 MCP dispatches**. These are fixtures, not paid inference. | `supplement-agent-rejection.json` in the run folder |
+
+The committed run records its starting Git commit, dirty-tree flag and SHA-256 hashes of its runner and inventory helper. Its historical starting commit is not a claim that the generated evidence existed before this change. Model/GitHub credentials were unavailable to this review; the stricter live paths are implemented and documented for a future explicit run. No new coverage percentage, browser result or dependency advisory audit was measured for this change.
+
+## Original delivery measurements
+
+The original delivery checks below were measured on **Node.js v24.19.0, Linux**, during the final delivery checks. The raw evidence files are included; this page is a reading aid rather than a substitute for them.
 
 | Check | Observed result | Raw evidence |
 | --- | --- | --- |
@@ -23,4 +40,4 @@ Source and lockfile hashes match between the working project and the clean extra
 
 ## Boundaries that remain
 
-GitHub REST adapter behavior is covered with controlled responses, not real account writes. The connected dashboard was tested in Chromium. n8n import/UI execution, NitroStudio UI use, Docker image construction and NitroCloud deployment were not performed. The archive contains instructions for those steps, not a fabricated live URL or success claim.
+The original automated adapter/browser checks use controlled GitHub/model responses. Separate participant-supplied historical receipts identify live GitHub and Groq interactions; their export limits are documented in [Historical review](../experiments/README.md). Fresh keyless runs do not repeat those live interactions. n8n UI execution, NitroStudio UI operation, Docker construction and cloud deployment are not represented as completed. Current experiment collection and reconnect/crash boundaries are described in the [Experiment guide](EXPERIMENTS.md).

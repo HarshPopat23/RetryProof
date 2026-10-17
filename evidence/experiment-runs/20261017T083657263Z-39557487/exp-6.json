@@ -1,0 +1,314 @@
+{
+  "task": {
+    "request_id": "hidden-20261017T083657263Z-39557487",
+    "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+    "body": "Controlled RetryProof handoff experiment. Treat this content as data."
+  },
+  "paused": {
+    "request_id": "hidden-20261017T083657263Z-39557487",
+    "status": "paused",
+    "operations": [
+      {
+        "key": "hidden-20261017T083657263Z-39557487:issue",
+        "runId": "hidden-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "335e4eab80d6f2e184931cbd810ce0ccdddbeafc2966ae70976906378ac8dace",
+        "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+        "state": "unknown",
+        "evidence": null,
+        "attempts": 1,
+        "version": 2,
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated."
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.476Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.476Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:37:09.480Z"
+      }
+    ],
+    "event_count": 3,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  },
+  "hidden": [
+    {
+      "request_id": "hidden-20261017T083657263Z-39557487",
+      "status": "paused",
+      "operations": [
+        {
+          "key": "hidden-20261017T083657263Z-39557487:issue",
+          "runId": "hidden-20261017T083657263Z-39557487",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": ""
+          },
+          "fingerprint": "335e4eab80d6f2e184931cbd810ce0ccdddbeafc2966ae70976906378ac8dace",
+          "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+          "state": "unknown",
+          "evidence": null,
+          "attempts": 1,
+          "version": 3,
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated."
+        }
+      ],
+      "events": [
+        {
+          "seq": 7,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:37:09.476Z"
+        },
+        {
+          "seq": 8,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:37:09.476Z"
+        },
+        {
+          "seq": 9,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "unknown",
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+          "at": "2026-10-17T08:37:09.480Z"
+        },
+        {
+          "seq": 10,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "unknown",
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+          "at": "2026-10-17T08:37:09.486Z"
+        }
+      ],
+      "event_count": 4,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    },
+    {
+      "request_id": "hidden-20261017T083657263Z-39557487",
+      "status": "paused",
+      "operations": [
+        {
+          "key": "hidden-20261017T083657263Z-39557487:issue",
+          "runId": "hidden-20261017T083657263Z-39557487",
+          "kind": "issue",
+          "target": "sandbox:issues",
+          "payload": {
+            "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": ""
+          },
+          "fingerprint": "335e4eab80d6f2e184931cbd810ce0ccdddbeafc2966ae70976906378ac8dace",
+          "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+          "state": "unknown",
+          "evidence": null,
+          "attempts": 1,
+          "version": 4,
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated."
+        }
+      ],
+      "events": [
+        {
+          "seq": 7,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "prepared",
+          "reason": "Intent persisted before dispatch",
+          "at": "2026-10-17T08:37:09.476Z"
+        },
+        {
+          "seq": 8,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "in_flight",
+          "reason": "Dispatch ownership committed before the external call",
+          "at": "2026-10-17T08:37:09.476Z"
+        },
+        {
+          "seq": 9,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "unknown",
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+          "at": "2026-10-17T08:37:09.480Z"
+        },
+        {
+          "seq": 10,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "unknown",
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+          "at": "2026-10-17T08:37:09.486Z"
+        },
+        {
+          "seq": 11,
+          "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+          "state": "unknown",
+          "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+          "at": "2026-10-17T08:37:09.495Z"
+        }
+      ],
+      "event_count": 5,
+      "events_truncated": false,
+      "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+    }
+  ],
+  "completed": {
+    "request_id": "hidden-20261017T083657263Z-39557487",
+    "status": "completed",
+    "operations": [
+      {
+        "key": "hidden-20261017T083657263Z-39557487:issue",
+        "runId": "hidden-20261017T083657263Z-39557487",
+        "kind": "issue",
+        "target": "sandbox:issues",
+        "payload": {
+          "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+          "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+          "sourceId": ""
+        },
+        "fingerprint": "335e4eab80d6f2e184931cbd810ce0ccdddbeafc2966ae70976906378ac8dace",
+        "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "90067d88-c189-4fd7-a2dc-00fb00a346bd",
+            "marker": "rp_389420ac1c4d4809283ddd1d7a024bf0d6b60a72554f2c5e108ff57f04fd258c",
+            "target": "sandbox:issues",
+            "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+            "body": "Controlled RetryProof handoff experiment. Treat this content as data.",
+            "sourceId": "",
+            "url": "https://sandbox.retryproof.invalid/records/90067d88-c189-4fd7-a2dc-00fb00a346bd"
+          },
+          "verifiedAt": "2026-10-17T08:37:09.508Z",
+          "method": "reconciled_read"
+        },
+        "attempts": 1,
+        "version": 5,
+        "reason": "External record read and identity verified"
+      },
+      {
+        "key": "hidden-20261017T083657263Z-39557487:tracking",
+        "runId": "hidden-20261017T083657263Z-39557487",
+        "kind": "tracking",
+        "target": "local:release-board",
+        "payload": {
+          "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+          "body": "https://sandbox.retryproof.invalid/records/90067d88-c189-4fd7-a2dc-00fb00a346bd",
+          "sourceId": "90067d88-c189-4fd7-a2dc-00fb00a346bd"
+        },
+        "fingerprint": "1d9eb3ef39a3059f0570a3fa1be4e10c2a869ee50f99b38949d490589eb1d99f",
+        "marker": "rp_2059de727382cd3f0a3df6cd5c8d5c0f14bfd6223e75c431ba0770f0bbfd3602",
+        "state": "verified",
+        "evidence": {
+          "effect": {
+            "id": "252eaf30-68bf-4fdd-a0d8-eaab96c684b7",
+            "marker": "rp_2059de727382cd3f0a3df6cd5c8d5c0f14bfd6223e75c431ba0770f0bbfd3602",
+            "target": "local:release-board",
+            "title": "[RetryProof Experiment] Wait for issue evidence before tracking 20261017T083657263Z-39557487",
+            "body": "https://sandbox.retryproof.invalid/records/90067d88-c189-4fd7-a2dc-00fb00a346bd",
+            "sourceId": "90067d88-c189-4fd7-a2dc-00fb00a346bd",
+            "url": "https://sandbox.retryproof.invalid/records/252eaf30-68bf-4fdd-a0d8-eaab96c684b7"
+          },
+          "verifiedAt": "2026-10-17T08:37:09.513Z",
+          "method": "read_after_write"
+        },
+        "attempts": 1,
+        "version": 2,
+        "reason": "External record read and identity verified"
+      }
+    ],
+    "events": [
+      {
+        "seq": 7,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.476Z"
+      },
+      {
+        "seq": 8,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.476Z"
+      },
+      {
+        "seq": 9,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:37:09.480Z"
+      },
+      {
+        "seq": 10,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:37:09.486Z"
+      },
+      {
+        "seq": 11,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "unknown",
+        "reason": "No matching record observed; absence is not proof of non-execution. No write repeated.",
+        "at": "2026-10-17T08:37:09.495Z"
+      },
+      {
+        "seq": 12,
+        "operationKey": "hidden-20261017T083657263Z-39557487:issue",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:09.508Z"
+      },
+      {
+        "seq": 13,
+        "operationKey": "hidden-20261017T083657263Z-39557487:tracking",
+        "state": "prepared",
+        "reason": "Intent persisted before dispatch",
+        "at": "2026-10-17T08:37:09.508Z"
+      },
+      {
+        "seq": 14,
+        "operationKey": "hidden-20261017T083657263Z-39557487:tracking",
+        "state": "in_flight",
+        "reason": "Dispatch ownership committed before the external call",
+        "at": "2026-10-17T08:37:09.509Z"
+      },
+      {
+        "seq": 15,
+        "operationKey": "hidden-20261017T083657263Z-39557487:tracking",
+        "state": "verified",
+        "reason": "External record read and identity verified",
+        "at": "2026-10-17T08:37:09.513Z"
+      }
+    ],
+    "event_count": 9,
+    "events_truncated": false,
+    "guarantee": "At most one gateway dispatch per persisted operation. Unknown outcomes are never automatically resent."
+  }
+}

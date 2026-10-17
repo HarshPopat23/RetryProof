@@ -1,0 +1,27 @@
+{
+  "wrong_token_response": {
+    "http_status": 401,
+    "response_received": true,
+    "response_body": {
+      "error": "Unauthorized MCP client"
+    }
+  },
+  "dashboard_rejection": {
+    "http_status": 400,
+    "ok": false,
+    "data": {
+      "error": "Remote MCP connection failed. Check its URL, bearer token and RetryProof tool availability."
+    }
+  },
+  "valid_token_control": {
+    "connected": true,
+    "downstream_services": 2
+  },
+  "unused_id_check": {
+    "http_status": 400,
+    "ok": false,
+    "data": {
+      "error": "The operation could not be verified. Check the connection and receipt before retrying with the same request ID."
+    }
+  }
+}
