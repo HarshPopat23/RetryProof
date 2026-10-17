@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RetryProof - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>RetryProof</h1>
+    <p>Evidence-first recovery for interrupted workflows</p>
+  </header>
+
+  <nav>
+    <a href="#setup">Connection</a>
+    <a href="#input">Input</a>
+    <a href="#processing">Processing</a>
+    <a href="#output">Output</a>
+    <a href="#docs">Docs</a>
+  </nav>
+
+  <main>
+    <section id="setup">
+      <div class="section-heading"><h2>Connection setup</h2><span id="connection-badge" class="connection-badge">Not connected</span></div>
+      <p class="section-copy">Choose how you want to use RetryProof. Your connection runs through the backend and real MCP tools.</p>
+      <form id="setup-form" autocomplete="off">
+        <div class="form-grid">
+          <div class="form-group"><label for="usage-mode">Usage</label>
+            <select id="usage-mode">
+              <option value="sandbox">Local sandbox — no API keys</option>
+              <option value="github">Real GitHub issues</option>
+              <option value="client">NitroStudio / another MCP client</option>
+              <option value="remote">Remote RetryProof MCP server</option>
+              <option value="agent">My API-powered AI agent</option>
+            </select>
+          </div>
+          <div class="form-group" id="workspace-field"><label for="workspace">Workspace name</label>
+            <input id="workspace" type="text" value="dashboard" required pattern="[A-Za-z0-9_-]{1,64}" maxlength="64">
+            <small>Use the same workspace and connection settings to reopen its saved tasks.</small>
+          </div>
+        </div>
+        <p id="mode-description" class="mode-note"></p>
+        <div id="backend-fields" hidden class="form-group"><label for="local-backend">Issue provider</label>
+          <select id="local-backend"><option value="sandbox">Local sandbox</option><option value="github">Real GitHub repository</option></select>
+        </div>
+        <div id="github-fields" hidden class="field-panel">
+          <h3>GitHub connection</h3>
+          <div class="form-grid">
+            <div class="form-group"><label for="github-owner">Owner / organization</label><input id="github-owner" type="text" maxlength="39" placeholder="Your GitHub username"></div>
+            <div class="form-group"><label for="github-repo">Repository</label><input id="github-repo" type="text" maxlength="100" placeholder="your-test-repository"></div>
+            <div class="form-group"><label for="github-token">GitHub user token</label><input id="github-token" type="password" autocomplete="new-password" placeholder="Fine-grained token with Issues read/write"></div>
+            <div class="form-group"><label for="marker-secret">Stable marker secret</label><input id="marker-secret" type="password" autocomplete="new-password" minlength="32" placeholder="At least 32 characters; keep this for recovery"></div>
+          </div><small>Connect checks account and repository access without creating an issue. Keep the marker secret stable. The tracking board stays local.</small>
+        </div>
+        <div id="remote-fields" hidden class="field-panel">
+          <h3>Remote MCP connection</h3>
+          <div class="form-group"><label for="remote-url">RetryProof MCP URL</label><input id="remote-url" type="url" placeholder="https://your-server.example/mcp"></div>
+          <div class="form-group"><label for="remote-token">RetryProof bearer token</label><input id="remote-token" type="password" autocomplete="new-password" placeholder="Your remote server's token"></div>
+          <small id="allowed-origins">Loopback endpoints are supported. Other HTTPS origins must be allowed in RP_UI_REMOTE_ORIGINS on the backend.</small>
+        </div>
+        <div id="client-fields" hidden class="field-panel">
+          <h3>Expose this connection to an MCP client</h3>
+          <div class="form-group"><label for="client-token">Choose a client bearer token</label><input id="client-token" type="password" autocomplete="new-password" minlength="32" placeholder="At least 32 characters; use the same token in your MCP client"></div>
+          <small>The backend will provide a working local MCP URL. Keep this dashboard server running while your client uses it.</small>
+        </div>
+        <div id="agent-fields" hidden class="field-panel">
+          <h3>AI agent connection</h3>
+          <div class="form-grid">
+            <div class="form-group"><label for="llm-provider">Provider</label><select id="llm-provider"><option value="openai">OpenAI</option><option value="groq">Groq</option><option value="gemini">Gemini (OpenAI-compatible API)</option></select></div>
+            <div class="form-group"><label for="llm-model">Model ID</label><input id="llm-model" type="text" maxlength="120" placeholder="A tool-calling model available in your account"></div>
+          </div>
+          <div class="form-group"><label for="llm-key">Provider API key</label><input id="llm-key" type="password" autocomplete="new-password" placeholder="Sent only to your selected model provider by the backend"></div>
+          <small>Run agent makes one model request and permits one MCP action for the exact task below. Provider usage may be billed. Connect alone does not call the model.</small>
+        </div>
+        <div class="actions"><button type="submit" id="btn-connect" class="btn-primary">Connect</button><button type="button" id="btn-disconnect">Disconnect</button><button type="button" id="btn-discover">Inspect MCP tools</button></div>
+        <p id="setup-message" role="status" aria-live="polite">Start with the local sandbox. No API keys needed.</p>
+        <small>Keys stay in the current backend session and are cleared from these fields after connection. They are not saved in browser storage or returned in configuration previews. Re-enter them after a server restart or disconnect.</small>
+      </form>
+      <div id="client-output" hidden><h3>Client configuration</h3><p id="client-instructions"></p><pre id="client-json"></pre><button type="button" id="btn-copy-config">Copy configuration</button></div>
+      <details id="capabilities-output" hidden><summary>Connected MCP capabilities</summary><pre id="capabilities-json"></pre></details>
+    </section>
+    <!-- INPUT SECTION -->
+    <section id="input">
+      <h2>1. Input</h2>
+      <form id="workflow-form">
+        <div class="form-group">
+          <label for="request-id">Request ID</label>
+          <input type="text" id="request-id" value="task-demo-1" required pattern="^[A-Za-z0-9_-]{1,80}$" placeholder="e.g. task-demo-1">
+          <small>Stable task identifier. Reusing an ID reconciles that task.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" value="Fix parser timeout on empty input" required maxlength="200" placeholder="e.g. Fix parser timeout">
+        </div>
+
+        <div class="form-group">
+          <label for="body">Description / Body</label>
+          <textarea id="body" rows="3" maxlength="10000" placeholder="Description of the issue...">Reproduction: parse an empty configuration string.</textarea>
+        </div>
+
+        <div class="form-group" id="fault-group">
+          <label for="fault">Simulate Fault (Sandbox)</label>
+          <select id="fault">
+            <option value="none">None (Normal execution)</option>
+            <option value="lost_response">Lost Response (Withhold response after write commit)</option>
+            <option value="hidden_read">Hidden Read (Temporarily hide record from queries)</option>
+            <option value="unavailable">Unavailable (Service temporarily 503)</option>
+          </select>
+          <small>Inject a deterministic failure into the issue provider.</small>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="btn-start" class="btn-primary">Start Workflow</button>
+          <button type="button" id="btn-resume">Resume / Recover</button>
+          <button type="button" id="btn-receipt">Get Receipt</button>
+          <button type="button" id="btn-refresh">Refresh Records</button>
+          <button type="button" id="btn-agent-start" hidden>Run agent</button>
+          <button type="button" id="btn-agent-resume" hidden>Recover with agent</button>
+          <button type="button" id="btn-reset" class="btn-secondary">New ID</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- PROCESSING SECTION -->
+    <section id="processing">
+      <h2>2. Processing</h2>
+      
+      <div class="status-banner">
+        <span>Current Status:</span>
+        <strong id="status-badge" class="badge-idle">IDLE</strong>
+        <span id="status-hint">Ready to dispatch</span>
+      </div>
+
+      <div class="pipeline">
+        <div class="step" id="step-intent">
+          <span class="step-num">Step 1</span>
+          <span class="step-name">Intent Logging</span>
+          <span class="step-status" id="step-intent-status">Waiting</span>
+        </div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step" id="step-issue">
+          <span class="step-num">Step 2</span>
+          <span class="step-name">Issue Service</span>
+          <span class="step-status" id="step-issue-status">Waiting</span>
+        </div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step" id="step-verify">
+          <span class="step-num">Step 3</span>
+          <span class="step-name">Read Verification</span>
+          <span class="step-status" id="step-verify-status">Waiting</span>
+        </div>
+        <div class="step-arrow">&rarr;</div>
+        <div class="step" id="step-track">
+          <span class="step-num">Step 4</span>
+          <span class="step-name">Tracking Board</span>
+          <span class="step-status" id="step-track-status">Waiting</span>
+        </div>
+      </div>
+
+      <div class="log-container">
+        <h3>Execution Events</h3>
+        <pre id="event-log">Waiting for action...</pre>
+      </div>
+    </section>
+
+    <!-- OUTPUT SECTION -->
+    <section id="output">
+      <h2>3. Output</h2>
+      <p id="records-source" class="section-copy">Connect to load records from the backend.</p>
+
+      <div class="output-tables">
+        <div class="table-box">
+          <h3 id="issues-heading">Issue records</h3>
+          <table id="table-issues">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Marker</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3">No records yet</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-box">
+          <h3 id="tracking-heading">Tracking records</h3>
+          <table id="table-trackers">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Linked Source ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3">No records yet</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="receipt-box">
+        <h3>Verified Ledger Receipt</h3>
+        <pre id="receipt-json">// Receipt data will appear here...</pre>
+      </div>
+    </section>
+
+    <!-- DOCS SECTION -->
+    <section id="docs">
+      <h2>4. Documentation</h2>
+
+      <article>
+        <h3>Why RetryProof Exists</h3>
+        <p>
+          In automated workflows (e.g. n8n agents calling tools), network timeouts or crashes often occur
+          <strong>after</strong> an external action (such as creating an issue) has already succeeded remotely.
+          A blind retry sends the creation request again, resulting in <strong>duplicate records</strong>.
+        </p>
+      </article>
+
+      <article>
+        <h3>How It Works</h3>
+        <ol>
+          <li><strong>Persist Intent First:</strong> Intent is saved in durable SQLite storage before dispatching any request.</li>
+          <li><strong>Single Dispatch:</strong> Transactional ownership ensures only one dispatch per operation key.</li>
+          <li><strong>Evidence Verification:</strong> If interrupted, RetryProof performs read checks before attempting any action.</li>
+          <li><strong>Resume vs. Pause:</strong> If evidence is found, it adopts the record and continues downstream. If evidence is missing or uncertain, it safely pauses instead of guessing.</li>
+        </ol>
+      </article>
+
+      <article>
+        <h3>MCP Tool Reference</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>rp_start_workflow</code></td>
+              <td>Registers a stable task ID, dispatches and verifies the issue, then dispatches and verifies the tracking record.</td>
+            </tr>
+            <tr>
+              <td><code>rp_resume_workflow</code></td>
+              <td>Inspects external evidence and continues an interrupted or paused workflow without blindly repeating a previously dispatched write.</td>
+            </tr>
+            <tr>
+              <td><code>rp_get_receipt</code></td>
+              <td>Retrieves the durable SQLite audit ledger and chronological verification events.</td>
+            </tr>
+            <tr>
+              <td><code>rp_discover_capabilities</code></td>
+              <td>Lists downstream tools available across connected issue and tracking providers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Status Codes</h3>
+        <p>
+          <code>completed</code>: All steps succeeded and were verified.<br>
+          <code>paused</code>: Uncertain outcome; write was not repeated; requires inspection or resume.<br>
+          <code>in_flight</code>: Dispatch claimed and actively executing.<br>
+          <code>unknown</code>: No conclusive evidence found yet; duplicate write prohibited.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>RetryProof &mdash; Connected MCP dashboard</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

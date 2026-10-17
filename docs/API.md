@@ -1,5 +1,7 @@
 # MCP tool contract
 
+The optional connected dashboard adds local `/api/...` routes which invoke these MCP tools through an actual MCP client. Its setup, credential requirements and separate loopback listener are described in [UI setup](UI_SETUP.md). It does not add key fields to the public recovery tools or change the engine's recovery policy.
+
 The public catalog contains four tools. They are registered through NitroStack decorators; input schemas are generated from Zod, and each handler independently parses input before performing work. Tool annotations are advisory metadata [S01](SOURCES.md#s01); the engine enforces the guarantees.
 
 ## Start

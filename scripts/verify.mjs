@@ -14,7 +14,7 @@ function sourceHash() {
       else hash.update(path + '\0').update(readFileSync(`${root}/${path}`));
     }
   }
-  for (const path of ['src', 'test', 'scripts']) walk(path);
+  for (const path of ['src', 'test', 'scripts', 'web']) walk(path);
   return hash.digest('hex');
 }
 function run(name, executable, args) {
@@ -29,7 +29,7 @@ const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 run('strict TypeScript build', npm, ['run', 'build']);
 if (checks.every(c => c.passed)) {
   const tests = run('automated core, adapter and real MCP transport tests', process.execPath,
-    ['--test', '--test-concurrency=1', '--test-reporter=tap', 'test/assets.test.mjs', 'test/core.test.mjs', 'test/github.test.mjs', 'test/http.test.mjs', 'test/mcp.test.mjs', 'test/persistence.test.mjs']);
+    ['--test', '--test-concurrency=1', '--test-reporter=tap', 'test/assets.test.mjs', 'test/core.test.mjs', 'test/github.test.mjs', 'test/http.test.mjs', 'test/mcp.test.mjs', 'test/persistence.test.mjs', 'test/dashboard.test.mjs']);
   mkdirSync(`${root}/evidence`, { recursive: true }); writeFileSync(`${root}/evidence/test-results.tap`, tests.output);
   run('executed baseline and protected recovery demo', process.execPath, ['scripts/demo.mjs']);
 }

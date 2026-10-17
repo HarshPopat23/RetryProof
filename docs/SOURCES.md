@@ -102,5 +102,14 @@ Direct prior art for evidence-based recovery across services and preservation of
 * `evidence/demo-results.json`: executed sandbox baseline/protected comparison and actual operation receipts.
 * `evidence/verification.json`: commands, outcomes, runtime, and artifact hashes.
 * `evidence/dependency-audit.json`: dependency advisory response captured during verification, if available.
+* `evidence/browser-check.json`: Chromium checks of the connected UI, when run; remote/sandbox MCP actions are real, model/GitHub responses are controlled fixtures.
+
+## Dashboard agent API references
+
+* OpenAI function calling: https://platform.openai.com/docs/guides/function-calling
+* Groq tool use: https://console.groq.com/docs/tool-use/overview
+* Gemini OpenAI-compatible API: https://ai.google.dev/gemini-api/docs/openai
+
+These primary references establish the request/tool-call interfaces used by the optional agent. Account/model availability is supplied by the user; no live-key provider success rate is inferred from the controlled adapter tests.
 
 Sources motivate the design. These files substantiate the local implementation. Neither substitutes for a real account integration test or a cloud deployment test.

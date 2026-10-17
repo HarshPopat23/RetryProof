@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-10-17T06:34:32.378Z",
+  "passed": true,
+  "checks": [
+    "Browser sandbox form executes a real MCP handoff",
+    "Hidden read pauses and browser recovery reuses the original issue",
+    "Client setup returns configuration, clears the secret and restores the correct mode on reload",
+    "Agent form calls the controlled provider once and executes the returned MCP action",
+    "GitHub setup validates read access using controlled responses and disables sandbox faults",
+    "Remote UI forwards to a second real MCP endpoint and labels historical evidence correctly",
+    "Disconnect disables actions; no keys or settings were written to browser storage",
+    "390px mobile layout has no horizontal page overflow"
+  ],
+  "errors": [],
+  "scope": "Chromium browser against the real local backend/MCP services. GitHub read checks and model responses are controlled fixtures; no paid model call or GitHub write."
+}

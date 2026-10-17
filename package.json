@@ -1,6 +1,6 @@
 {
   "name": "retryproof",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Evidence-first recovery for interrupted MCP workflows",
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -11,7 +11,10 @@
     "test:coverage": "npm run build && node --experimental-test-coverage --test --test-concurrency=1 test/*.test.mjs",
     "demo": "npm run build && node scripts/demo.mjs",
     "verify": "node scripts/verify.mjs",
-    "package": "node scripts/package.mjs"
+    "package": "node scripts/package.mjs",
+    "dashboard": "npm run build && node dist/dashboard/index.js",
+    "dashboard:start": "node dist/dashboard/index.js",
+    "test:browser": "npm run build && node scripts/browser-check.mjs"
   },
   "keywords": [],
   "author": "Harsh Popat",

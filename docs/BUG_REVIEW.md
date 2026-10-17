@@ -1,5 +1,11 @@
 # Bug review and final verification
 
+## Connected UI update
+
+The uploaded UI's browser-array simulation and automatic fallback were removed. The new `/api` routes forward to real MCP calls, and connection failures remain visible. The backend holds credentials per connected browser session, rejects cross-origin/CSRF requests, restricts remote origins and exports a real token-protected MCP bridge without returning its bearer token.
+
+Review also corrected a request-lock race by acquiring the session's busy flag before awaiting body parsing, restored the actual connected usage mode after browser reload, explicitly disabled inherited gateway bearer auth in managed STDIO children, and made the table labels distinguish authoritative sandbox records from historical remote receipt evidence. Tests cover the API behavior and optional browser checks exercise the actual controls.
+
 The review concentrated on dispatch identity, crash windows, concurrent workers, MCP parsing, source linkage, private credentials and the reproducibility of the deliverable. Tests assert authoritative effects rather than merely checking that functions returned success.
 
 ## Findings fixed in this implementation

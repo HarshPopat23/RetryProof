@@ -10,6 +10,15 @@ A GitHub issue can be created successfully even when its MCP response never reac
 
 Requires **Node.js 24+**, npm, and no API keys for the sandbox.
 
+For the connected browser dashboard:
+
+```bash
+npm ci
+npm run dashboard
+```
+
+Open **http://127.0.0.1:3400**, choose a setup option and Connect. The UI accepts GitHub, remote MCP and optional LLM credentials through the local backend. [Dashboard setup and replacement guide](docs/UI_SETUP.md).
+
 ```bash
 npm ci
 npm run verify
@@ -74,6 +83,7 @@ This is **not universal exactly-once execution**. A crash after persisting the d
 | [Judge brief](docs/JUDGE_BRIEF.md) | Problem, differentiator, judging criteria and evidence. |
 | [Architecture](docs/ARCHITECTURE.md) | State machine, identities, transactions, concurrency and recovery. |
 | [Setup](docs/SETUP.md) | Local run, GitHub mode, NitroStudio, HTTP and containers. |
+| [Connected dashboard](docs/UI_SETUP.md) | Five setup modes, credential entry, browser actions and exact replacement files. |
 | [n8n integration](docs/N8N.md) | Importable workflow and MCP Client Tool configuration. |
 | [MCP API](docs/API.md) | Inputs, outputs and client behavior. |
 | [Testing](docs/TESTING.md) | Reproduction commands and evidence limits. |

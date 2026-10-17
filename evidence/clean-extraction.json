@@ -1,17 +1,20 @@
 {
-  "generated_at": "2026-10-17T05:42:21.556Z",
+  "generated_at": "2026-10-17T06:36:19.995Z",
   "passed": true,
   "procedure": [
-    "Extract delivery ZIP into a separate directory",
+    "Extract updated ZIP into a separate directory",
     "npm ci --ignore-scripts",
-    "npm run verify"
+    "npm run verify",
+    "Chromium browser check using a locally supplied browser binary"
   ],
-  "source_sha256": "463a2a12980f3794f29fd79aadb9d1d492e5a9600e665d435e738b336a648e56",
-  "lockfile_sha256": "311117e0b50ae3a294e100fba9026a4082430e19d389ba7e2aba6ac1439418cd",
+  "source_sha256": "fd19f152bd38486d16ba27f92be2839f2da1f393c973dc8603c5229ad2a57686",
+  "lockfile_sha256": "22aa24b7f8e19ae59344b15a88f79c3b0f10b997e5c03d58344b2ee17af03277",
   "tests": {
-    "tests": "54",
-    "pass": "54",
+    "tests": "67",
+    "pass": "67",
     "fail": "0"
   },
-  "scope": "Local deterministic sandbox execution and mocked GitHub REST contract tests; no GitHub account writes, n8n UI run, NitroStudio UI run, Docker build or cloud deployment performed."
+  "browser_scenarios": 8,
+  "browser_passed": true,
+  "scope": "Real local dashboard, MCP and HTTP execution. Controlled GitHub read and model responses; no live account writes or paid inference."
 }
